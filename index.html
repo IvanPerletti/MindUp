@@ -1,36 +1,62 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Associazioni</title>
+
+  <!-- Stile -->
   <link rel="stylesheet" href="association.css">
 </head>
 
 <body>
   <main class="app">
 
+    <!-- Area esercizio -->
     <section class="columns">
-      <div class="column left">
+
+      <!-- Colonna sinistra -->
+      <section class="column left">
         <h2>Definizioni</h2>
         <div id="definitions" class="list"></div>
-      </div>
+      </section>
 
-      <div class="column right">
+      <!-- Colonna destra -->
+      <section class="column right">
         <h2>Nomi</h2>
         <div id="words" class="list"></div>
-      </div>
+      </section>
+
     </section>
 
-    <svg id="connections-layer"></svg>
+    <!-- Layer linee (SVG overlay) -->
+	<svg
+	  id="connections-layer"
+	  width="100%"
+	  height="100%"
+	  style="position:absolute; top:0; left:0;"
+	  aria-hidden="true">
+	</svg>
 
+
+    <!-- Controlli -->
     <footer class="controls">
-      <button id="reload">Altre proposte</button>
-      <button id="verify">Verifica</button>
+      <button id="reloadBtn" type="button">Altre proposte</button>
+      <button id="verifyBtn" type="button">Verifica</button>
     </footer>
 
   </main>
 
+  <!-- Logica -->
   <script src="association.js"></script>
+
+  <!-- Loader dati (scegline uno) -->
+  <script src="load_data_scienze.js"></script>
+  <!-- <script src="load_data_italiano.js"></script> -->
+
+  <script>
+    loadJSON();
+  </script>
+
 </body>
 </html>
