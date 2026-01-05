@@ -1,0 +1,15 @@
+{
+  "type": "association",
+  "items": [
+    {
+      "id": "w1",
+      "word": "Fotosintesi",
+      "definitions": [
+        "Processo con cui le piante producono energia",
+        "Meccanismo che usa luce e clorofilla",
+        "Trasformazione di CO₂ in zuccheri"
+      ],
+      "categoryId": 1
+    }
+  ]
+}

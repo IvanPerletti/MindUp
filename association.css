@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f4f7ff, #ffffff);
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.columns {
+  flex: 1;
+  display: flex;
+  padding: 12px;
+  gap: 12px;
+}
+
+.column {
+  flex: 1;
+  background: #ffffffcc;
+  border-radius: 16px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  min-height: 48px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f2f4f8;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.item.selected {
+  border-color: #7aa2ff;
+  background: #e8efff;
+}
+
+.item.correct {
+  background: #dff5e4;
+}
+
+.item.wrong {
+  background: #f8dede;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  flex: 1;
+  height: 48px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  background: #4f6df5;
+  color: white;
+}
+
+svg#connections-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}

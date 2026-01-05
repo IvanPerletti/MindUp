@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Associazioni</title>
+  <link rel="stylesheet" href="association.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <section class="columns">
+      <div class="column left">
+        <h2>Definizioni</h2>
+        <div id="definitions" class="list"></div>
+      </div>
+
+      <div class="column right">
+        <h2>Nomi</h2>
+        <div id="words" class="list"></div>
+      </div>
+    </section>
+
+    <svg id="connections-layer"></svg>
+
+    <footer class="controls">
+      <button id="reload">Altre proposte</button>
+      <button id="verify">Verifica</button>
+    </footer>
+
+  </main>
+
+  <script src="association.js"></script>
+</body>
+</html>
