@@ -1,88 +1,171 @@
+/* RESET BASE */
 * {
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #f4f7ff, #ffffff);
+  background: linear-gradient(180deg, #eaf1ff, #ffffff);
 }
 
+/* APP LAYOUT */
 .app {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* ===== HEADER ===== */
+.exercise-header {
+  padding: 16px;
+}
+
+.header-card {
+  background: white;
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.exercise-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.exercise-progress {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ===== MAIN COLUMNS ===== */
+
+.column.left {
+  flex: 2;
+}
+
+.column.right {
+  flex: 1;
+}
+
+
 .columns {
   flex: 1;
   display: flex;
-  padding: 12px;
-  gap: 12px;
+  gap: 28px;                /* PIÙ SPAZIO TRA LE COLONNE */
+  padding: 20px;
 }
 
+/* CARD COLONNE */
 .column {
   flex: 1;
-  background: #ffffffcc;
-  border-radius: 16px;
-  padding: 12px;
+  background: white;
+  border-radius: 24px;
+  padding: 16px;
   overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-h2 {
-  margin: 0 0 8px;
-  font-size: 1rem;
+/* TITOLI COLONNE */
+.column h2 {
+  margin: 0 0 12px;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #374151;
 }
 
+/* LISTE */
 .list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
+/* ITEM */
 .item {
-  min-height: 48px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: #f2f4f8;
+  min-height: 52px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #f8f8fc;
   border: 2px solid transparent;
   cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
+/* SELEZIONE */
 .item.selected {
-  border-color: #7aa2ff;
-  background: #e8efff;
+  border-color: #3b82f6;
+  background: #e0edff;
 }
 
+/* CORRETTO / SBAGLIATO */
 .item.correct {
-  background: #dff5e4;
+  background: #dcfce7;
+  border-color: #22c55e;
+  font-weight: 600;
 }
 
 .item.wrong {
-  background: #f8dede;
+  background: #fee2e2;
+  border-color: #ef4444;
+  font-weight: 600;
 }
 
+/* ===== FOOTER ===== */
 .controls {
   display: flex;
-  gap: 12px;
-  padding: 10px;
-  background: #ffffff;
-  border-top: 1px solid #ddd;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
 }
 
 button {
   flex: 1;
-  height: 48px;
-  border-radius: 14px;
+  height: 52px;
+  border-radius: 18px;
   border: none;
-  font-size: 1rem;
-  background: #4f6df5;
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: #3b82f6;
   color: white;
+  box-shadow: 0 6px 14px rgba(59,130,246,0.3);
 }
 
-svg#connections-layer {
+/* ===== SVG ===== */
+#connections-layer {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 5;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .columns {
+    gap: 20px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .exercise-title {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 900px) {
+  .column.left {
+    flex: 1.5;
+  }
+
+  .column.right {
+    flex: 1;
+  }
 }

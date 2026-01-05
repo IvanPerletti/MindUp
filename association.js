@@ -1,12 +1,23 @@
 /* =========================
+   RIFERIMENTI DOM
+========================= */
+
+const definitions = document.getElementById("definitions");
+const words = document.getElementById("words");
+const connectionsLayer = document.getElementById("connections-layer");
+const verifyBtn = document.getElementById("verifyBtn");
+const reloadBtn = document.getElementById("reloadBtn");
+
+/* =========================
    STATO GLOBALE
 ========================= */
 
 let data = [];
-const connectionsLayer = document.getElementById("connections-layer");
+
 let state = {
   links: {},        // leftId -> rightId
-  activeLeft: null, // definizione selezionata
+  linkColors: {},   // leftId -> rgb()
+  activeLeft: null,
   verified: false
 };
 
@@ -15,11 +26,17 @@ let state = {
 ========================= */
 
 function buildExercise() {
-  state = { links: {}, activeLeft: null, verified: false };
+  state = {
+    links: {},
+    linkColors: {},
+    activeLeft: null,
+    verified: false
+  };
+
   clearUI();
   clearConnections();
 
-  const sample = shuffle([...data]).slice(0, 7);
+  const sample = shuffle([...data]).slice(0, 5);
 
   const leftItems = sample.map(item => ({
     id: item.id,
@@ -33,17 +50,15 @@ function buildExercise() {
     }))
   );
 
-  renderList("definitions", leftItems, "left");
-  renderList("words", rightItems, "right");
+  renderList(definitions, leftItems, "left");
+  renderList(words, rightItems, "right");
 }
 
 /* =========================
    RENDERING LISTE
 ========================= */
 
-function renderList(containerId, items, side) {
-  const container = document.getElementById(containerId);
-
+function renderList(container, items, side) {
   items.forEach(item => {
     const el = document.createElement("div");
     el.className = "item";
@@ -65,7 +80,7 @@ function onSelect(el) {
   const side = el.dataset.side;
   const id = el.dataset.id;
 
-  // TAP SU DEFINIZIONE
+  // tap su definizione
   if (side === "left") {
     clearSelection("left");
     el.classList.add("selected");
@@ -73,9 +88,14 @@ function onSelect(el) {
     return;
   }
 
-  // TAP SU NOME → CREA FRECCIA
+  // tap su nome → crea collegamento
   if (side === "right" && state.activeLeft) {
     state.links[state.activeLeft] = id;
+
+    if (!state.linkColors[state.activeLeft]) {
+      state.linkColors[state.activeLeft] = randomVisibleColor();
+    }
+
     state.activeLeft = null;
     clearSelection("left");
     drawConnections();
@@ -89,14 +109,15 @@ function onSelect(el) {
 function verify() {
   state.verified = true;
 
-  document
-    .querySelectorAll('.item[data-side="right"]')
-    .forEach(el => {
-      const rightId = el.dataset.id;
-      const ok = Object.entries(state.links)
-        .some(([leftId, linkedRight]) => leftId === rightId && linkedRight === rightId);
-      el.classList.add(ok ? "correct" : "wrong");
-    });
+  document.querySelectorAll('.item[data-side="right"]').forEach(el => {
+    const rightId = el.dataset.id;
+    const ok = Object.entries(state.links)
+      .some(([leftId, linkedRight]) =>
+        leftId === rightId && linkedRight === rightId
+      );
+
+    el.classList.add(ok ? "correct" : "wrong");
+  });
 }
 
 /* =========================
@@ -104,8 +125,7 @@ function verify() {
 ========================= */
 
 function drawConnections() {
-  const svg = document.getElementById("connections-layer");
-  svg.innerHTML = "";
+  connectionsLayer.innerHTML = "";
 
   Object.entries(state.links).forEach(([leftId, rightId]) => {
     const leftEl = document.querySelector(
@@ -114,7 +134,6 @@ function drawConnections() {
     const rightEl = document.querySelector(
       `.item[data-side="right"][data-id="${rightId}"]`
     );
-
     if (!leftEl || !rightEl) return;
 
     const p1 = getRightCenter(leftEl);
@@ -135,42 +154,38 @@ function drawConnections() {
     );
 
     path.setAttribute("fill", "none");
-    path.setAttribute("stroke", "#6b85ff");
+    path.setAttribute("stroke", state.linkColors[leftId]);
     path.setAttribute("stroke-width", "4");
     path.setAttribute("stroke-linecap", "round");
 
-    svg.appendChild(path);
+    connectionsLayer.appendChild(path);
   });
 }
 
 function clearConnections() {
-  const svg = document.getElementById("connections-layer");
-  if (svg) svg.innerHTML = "";
+  connectionsLayer.innerHTML = "";
 }
 
 function getRightCenter(el) {
-  const rect = el.getBoundingClientRect();
-  const svgRect = connectionsLayer.getBoundingClientRect();
-
-  return {
-    x: rect.right - svgRect.left,
-    y: rect.top + rect.height / 2 - svgRect.top
-  };
+  const r = el.getBoundingClientRect();
+  const s = connectionsLayer.getBoundingClientRect();
+  return { x: r.right - s.left, y: r.top + r.height / 2 - s.top };
 }
 
 function getLeftCenter(el) {
-  const rect = el.getBoundingClientRect();
-  const svgRect = connectionsLayer.getBoundingClientRect();
-
-  return {
-    x: rect.left - svgRect.left,
-    y: rect.top + rect.height / 2 - svgRect.top
-  };
+  const r = el.getBoundingClientRect();
+  const s = connectionsLayer.getBoundingClientRect();
+  return { x: r.left - s.left, y: r.top + r.height / 2 - s.top };
 }
 
 /* =========================
    UTILITY
 ========================= */
+
+function randomVisibleColor() {
+  const rnd = () => 64 + Math.floor(Math.random() * 129);
+  return `rgb(${rnd()}, ${rnd()}, ${rnd()})`;
+}
 
 function clearUI() {
   definitions.innerHTML = "";
