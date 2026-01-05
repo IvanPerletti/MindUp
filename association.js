@@ -11,7 +11,12 @@ const reloadBtn = document.getElementById("reloadBtn");
 /* =========================
    STATO GLOBALE
 ========================= */
-
+const FLOW = {
+  currentStep: 1,
+  totalSteps: 5,
+  answered: 0,
+  correct: 0
+};
 let data = [];
 
 let state = {
@@ -52,6 +57,11 @@ function buildExercise() {
 
   renderList(definitions, leftItems, "left");
   renderList(words, rightItems, "right");
+  
+  // reset stato UI
+document.querySelector(".app").classList.remove("verified");
+reloadBtn.disabled = true;
+reloadBtn.textContent = "Completa l’esercizio";
 }
 
 /* =========================
@@ -107,7 +117,13 @@ function onSelect(el) {
 ========================= */
 
 function verify() {
+  if (state.verified) return;
+
   state.verified = true;
+  document.querySelector(".app").classList.add("verified");
+
+  let correctThisStep = 0;
+  const answeredThisStep = Object.keys(state.links).length;
 
   document.querySelectorAll('.item[data-side="right"]').forEach(el => {
     const rightId = el.dataset.id;
@@ -116,9 +132,27 @@ function verify() {
         leftId === rightId && linkedRight === rightId
       );
 
+    if (ok) correctThisStep++;
     el.classList.add(ok ? "correct" : "wrong");
   });
+
+  // aggiorna contatori globali
+  FLOW.answered += answeredThisStep;
+  FLOW.correct += correctThisStep;
+
+  // aggiorna header
+  document.getElementById("answered").textContent = FLOW.answered;
+  document.getElementById("correct").textContent = FLOW.correct;
+
+  // progress bar (+20% per step)
+  const percent = (FLOW.currentStep / FLOW.totalSteps) * 100;
+  document.getElementById("progressFill").style.width = percent + "%";
+
+  // abilita bottone prossimo
+  reloadBtn.disabled = false;
+  reloadBtn.textContent = "Vai al prossimo";
 }
+
 
 /* =========================
    SVG CONNECTIONS
@@ -206,5 +240,16 @@ const randomOne = arr => arr[Math.floor(Math.random() * arr.length)];
 ========================= */
 
 verifyBtn.addEventListener("click", verify);
-reloadBtn.addEventListener("click", () => loadJSON());
+reloadBtn.addEventListener("click", () => {
+  FLOW.currentStep++;
+
+  if (FLOW.currentStep > FLOW.totalSteps) {
+    // qui in futuro: result.html
+    return;
+  }
+
+  document.getElementById("step").textContent = FLOW.currentStep;
+  buildExercise();
+});
+
 window.addEventListener("resize", drawConnections);
