@@ -13,7 +13,7 @@ const reloadBtn = document.getElementById("reloadBtn");
 ========================= */
 const FLOW = {
   currentStep: 1,
-  totalSteps: 5,
+  totalSteps: 4,
   answered: 0,
   correct: 0
 };
@@ -241,15 +241,23 @@ const randomOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
 verifyBtn.addEventListener("click", verify);
 reloadBtn.addEventListener("click", () => {
-  FLOW.currentStep++;
-
-  if (FLOW.currentStep > FLOW.totalSteps) {
-    // qui in futuro: result.html
+  // se ho finito gli step → vai ai risultati
+  if (FLOW.currentStep >= FLOW.totalSteps) {
+    goToResultPage();
     return;
   }
 
+  // altrimenti vai allo step successivo
+  FLOW.currentStep++;
   document.getElementById("step").textContent = FLOW.currentStep;
   buildExercise();
 });
 
+
 window.addEventListener("resize", drawConnections);
+
+function goToResultPage() {
+  const url =
+    `result.html?correct=${FLOW.correct}&answered=${FLOW.answered}`;
+  window.location.href = url;
+}
