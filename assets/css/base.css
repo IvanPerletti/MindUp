@@ -1,0 +1,119 @@
+/* =========================
+   MATERIAL BASE (GLOBAL)
+   ========================= */
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* COLOR SYSTEM */
+:root {
+  --primary: #3b82f6;
+  --primary-soft: #e0edff;
+  --success: #22c55e;
+  --error: #ef4444;
+  --bg-gradient: linear-gradient(180deg, #eaf1ff, #ffffff);
+
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+
+  --card-radius: 24px;
+  --btn-radius: 18px;
+}
+
+/* BODY */
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+}
+
+/* APP WRAPPER */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.exercise-header {
+  padding: 16px;
+}
+
+.exercise-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.exercise-progress {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  margin-top: 10px;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+/* BUTTONS */
+.controls {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+button {
+  flex: 1;
+  height: 52px;
+  border-radius: var(--btn-radius);
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 6px 14px rgba(59,130,246,0.3);
+}
+
+button:disabled {
+  background: #c7d2fe;
+  box-shadow: none;
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* STATES */
+.hidden {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .exercise-title {
+    font-size: 1.2rem;
+  }
+}

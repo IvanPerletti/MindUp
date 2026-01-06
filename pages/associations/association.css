@@ -1,81 +1,14 @@
-/* RESET BASE */
-* {
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-body {
-  margin: 0;
-  background: linear-gradient(180deg, #eaf1ff, #ffffff);
-}
-
-/* APP LAYOUT */
-.app {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== HEADER ===== */
-.exercise-header {
-  padding: 16px;
-}
-
-.header-card {
-  background: white;
-  border-radius: 20px;
-  padding: 16px 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.exercise-title {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1f2937;
-}
-
-.exercise-progress {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-/* ===== PROGRESS BAR ===== */
-
-.progress-bar {
-  margin-top: 10px;
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: #3b82f6;
-  transition: width 0.5s ease; /* animazione soft */
-}
-/* ===== MAIN COLUMNS ===== */
-
-.column.left {
-  flex: 2;
-}
-
-.column.right {
-  flex: 1;
-}
-
+/* =========================
+   ASSOCIATIONS PAGE
+   ========================= */
 
 .columns {
   flex: 1;
   display: flex;
-  gap: 28px;                /* PIÙ SPAZIO TRA LE COLONNE */
+  gap: 28px;
   padding: 20px;
 }
 
-/* CARD COLONNE */
 .column {
   flex: 1;
   background: white;
@@ -85,23 +18,19 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-/* TITOLI COLONNE */
 .column h2 {
-  margin: 0 0 12px;
+  margin-bottom: 12px;
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #374151;
 }
 
-/* LISTE */
 .list {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* ITEM */
 .item {
   min-height: 52px;
   padding: 14px 16px;
@@ -113,52 +42,25 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* SELEZIONE */
+/* STATES */
 .item.selected {
-  border-color: #3b82f6;
-  background: #e0edff;
+  border-color: var(--primary);
+  background: var(--primary-soft);
 }
 
-/* CORRETTO / SBAGLIATO */
 .item.correct {
   background: #dcfce7;
-  border-color: #22c55e;
+  border-color: var(--success);
   font-weight: 600;
 }
 
 .item.wrong {
   background: #fee2e2;
-  border-color: #ef4444;
+  border-color: var(--error);
   font-weight: 600;
 }
 
-/* ===== FOOTER ===== */
-.controls {
-  display: flex;
-  gap: 16px;
-  padding: 16px;
-  background: white;
-  border-top: 1px solid #e5e7eb;
-}
-
-button {
-  flex: 1;
-  height: 52px;
-  border-radius: 18px;
-  border: none;
-  font-size: 1.05rem;
-  font-weight: 600;
-  background: #3b82f6;
-  color: white;
-  box-shadow: 0 6px 14px rgba(59,130,246,0.3);
-}
-button:disabled {
-  background: #c7d2fe;
-  box-shadow: none;
-  opacity: 0.7;
-  cursor: default;
-}
-/* ===== SVG ===== */
+/* SVG CONNECTIONS */
 #connections-layer {
   position: absolute;
   inset: 0;
@@ -166,76 +68,22 @@ button:disabled {
   z-index: 5;
 }
 
-/* ===== BLOCCO INPUT POST-VERIFICA ===== */
-
+/* VERIFIED STATE */
 .app.verified .item {
   pointer-events: none;
   opacity: 0.9;
 }
-.app.verified .column {
-  box-shadow: 0 0 0 2px rgba(59,130,246,0.15),
-              0 8px 24px rgba(0,0,0,0.08);
-}
-/* ===== RESPONSIVE ===== */
 
+.app.verified .column {
+  box-shadow:
+    0 0 0 2px rgba(59,130,246,0.15),
+    0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .columns {
     gap: 20px;
     padding: 16px;
   }
-}
-
-@media (max-width: 700px) {
-  .exercise-title {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 900px) {
-  .column.left {
-    flex: 1.5;
-  }
-
-  .column.right {
-    flex: 1;
-  }
-}
-
-
-/* ===== RESULT PAGE ===== */
-
-.result {
-  justify-content: center;
-}
-
-.result-card {
-  margin: 24px;
-  padding: 24px;
-  background: white;
-  border-radius: 24px;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-.result-title {
-  font-size: 1.6rem;
-  margin: 0;
-  color: #1f2937;
-}
-
-.result-subtitle {
-  margin-top: 8px;
-  font-size: 1rem;
-  color: #4b5563;
-}
-
-.result-score {
-  margin: 16px 0;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #3b82f6;
-}
-
-.stars {
-  font-size: 2rem;
-  color: #facc15;
 }

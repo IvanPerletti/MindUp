@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>MindUp Kids</title>
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="exercise-header">
+      <div class="exercise-title">Scegli attività</div>
+      <div class="exercise-progress">Animale → Materia → Argomento</div>
+    </header>
+
+    <main class="content">
+
+      <section id="animals" class="card block"></section>
+
+      <section id="subjects" class="card block hidden"></section>
+
+      <section id="topics" class="card block hidden"></section>
+
+      <section id="sessions" class="controls hidden">
+        <button id="btn-association" disabled>Associazioni</button>
+        <button id="btn-quiz" disabled>Quiz</button>
+        <button id="btn-completion" disabled>Completa</button>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -258,6 +258,10 @@ window.addEventListener("resize", drawConnections);
 
 function goToResultPage() {
   const url =
-    `result.html?correct=${FLOW.correct}&answered=${FLOW.answered}`;
-  window.location.href = url;
+  '../../results/result.html?correct=' +
+  FLOW.correct +
+  '&answered=' +
+  FLOW.answered;
+
+window.location.href = url;
 }
