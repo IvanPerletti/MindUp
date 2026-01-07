@@ -1,0 +1,12 @@
+.footer-link {
+  flex: 1;
+  text-align: center;
+  line-height: 52px;
+  height: 52px;
+  border-radius: var(--btn-radius);
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(59,130,246,0.3);
+}

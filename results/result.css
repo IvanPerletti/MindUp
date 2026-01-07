@@ -1,0 +1,42 @@
+/* =========================
+   RESULT PAGE
+   ========================= */
+
+.result {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-card {
+  margin: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.result-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.result-subtitle {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.result-score {
+  margin: 16px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stars {
+  font-size: 2rem;
+  color: #facc15;
+}
