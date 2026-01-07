@@ -30,6 +30,31 @@ let state = {
    BUILD ESERCIZIO
 ========================= */
 
+async function loadJSON(topic) {
+  if (!topic) {
+    console.error("loadJSON: topic mancante");
+    return;
+  }
+
+  const path = `/data/exercises/${topic}.json`;
+
+  try {
+    const res = await fetch(path);
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} - ${path}`);
+    }
+
+    const json = await res.json();
+    data = json.associations;
+    buildExercise();
+
+  } catch (e) {
+    console.error("JSON load failed:", e);
+  }
+}
+
+
 function buildExercise() {
   state = {
     links: {},

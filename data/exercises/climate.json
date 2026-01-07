@@ -1,0 +1,274 @@
+{
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Fasce polari",
+      "definitions": [
+        "Zone più fredde della Terra",
+        "Aree con temperature sotto lo zero quasi tutto l’anno"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a2",
+      "word": "Estate polare",
+      "definitions": [
+        "Stagione con sei mesi di luce",
+        "Periodo in cui il Sole non tramonta mai"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a3",
+      "word": "Inverno polare",
+      "definitions": [
+        "Stagione con poca o nessuna luce",
+        "Periodo molto freddo e buio"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a4",
+      "word": "Taiga",
+      "definitions": [
+        "Foresta di conifere vicino al Circolo Polare Artico",
+        "Ambiente con pini e abeti"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a5",
+      "word": "Conifere",
+      "definitions": [
+        "Alberi con foglie a forma di ago",
+        "Piante come pini e abeti"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a6",
+      "word": "Tundra",
+      "definitions": [
+        "Ambiente freddo senza alberi",
+        "Zona con terreno gelato tutto l’anno"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a7",
+      "word": "Permafrost",
+      "definitions": [
+        "Terreno sempre gelato",
+        "Suolo che impedisce alle radici di crescere"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a8",
+      "word": "Muschi e licheni",
+      "definitions": [
+        "Piante che crescono nella tundra",
+        "Vegetazione bassa che resiste al freddo"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a9",
+      "word": "Orso polare",
+      "definitions": [
+        "Animale che vive al Polo Nord",
+        "Grande mammifero delle regioni polari"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a10",
+      "word": "Pinguino",
+      "definitions": [
+        "Animale che vive al Polo Sud",
+        "Uccello che non vola ma nuota"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a11",
+      "word": "Fasce temperate",
+      "definitions": [
+        "Zone con clima né troppo caldo né troppo freddo",
+        "Aree con quattro stagioni"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a12",
+      "word": "Quattro stagioni",
+      "definitions": [
+        "Primavera, estate, autunno e inverno",
+        "Caratteristica delle fasce temperate"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a13",
+      "word": "Praterie",
+      "definitions": [
+        "Grandi distese di erba",
+        "Zone dove pascolano animali"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a14",
+      "word": "Steppe",
+      "definitions": [
+        "Praterie molto estese",
+        "Aree con poca vegetazione arborea"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a15",
+      "word": "Latifoglie",
+      "definitions": [
+        "Alberi che perdono le foglie in autunno",
+        "Piante come quercia e faggio"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a16",
+      "word": "Macchia mediterranea",
+      "definitions": [
+        "Vegetazione tipica del clima mediterraneo",
+        "Ambiente con alberi sempreverdi e arbusti"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a17",
+      "word": "Sempreverdi",
+      "definitions": [
+        "Alberi che non perdono le foglie",
+        "Piante verdi tutto l’anno"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a18",
+      "word": "Piante aromatiche",
+      "definitions": [
+        "Piante profumate come rosmarino e mirto",
+        "Vegetazione tipica della macchia mediterranea"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a19",
+      "word": "Fasce tropicali",
+      "definitions": [
+        "Zone vicine all’equatore",
+        "Aree più calde della Terra"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a20",
+      "word": "Equatore",
+      "definitions": [
+        "Linea immaginaria al centro della Terra",
+        "Zona con temperature elevate"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a21",
+      "word": "Foresta pluviale",
+      "definitions": [
+        "Foresta con piogge abbondanti",
+        "Ambiente con la maggiore biodiversità"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a22",
+      "word": "Biodiversità",
+      "definitions": [
+        "Grande varietà di piante e animali",
+        "Ricchezza di specie viventi"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a23",
+      "word": "Savana",
+      "definitions": [
+        "Ambiente con arbusti e pochi alberi",
+        "Zona con siccità e piogge stagionali"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a24",
+      "word": "Siccità",
+      "definitions": [
+        "Periodo senza pioggia",
+        "Fase secca del clima"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a25",
+      "word": "Deserto caldo",
+      "definitions": [
+        "Ambiente dove piove quasi mai",
+        "Distesa di sabbia o roccia"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a26",
+      "word": "Piante grasse",
+      "definitions": [
+        "Piante che conservano acqua",
+        "Vegetazione tipica del deserto"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a27",
+      "word": "Cactus",
+      "definitions": [
+        "Pianta grassa del deserto",
+        "Pianta con spine che trattiene acqua"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a28",
+      "word": "Cammello",
+      "definitions": [
+        "Animale del deserto",
+        "Mammifero che resiste alla sete"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a29",
+      "word": "Animali migratori",
+      "definitions": [
+        "Animali che si spostano con le stagioni",
+        "Uccelli che arrivano in estate nelle zone fredde"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a30",
+      "word": "Insetti",
+      "definitions": [
+        "Animali piccoli molto numerosi in estate",
+        "Fauna presente in molti ambienti"
+      ],
+      "categoryId": 0
+    }
+  ]
+}
