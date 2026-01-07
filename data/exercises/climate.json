@@ -270,5 +270,87 @@
       ],
       "categoryId": 0
     }
+  ],
+    "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "Le fasce polari sono le zone più fredde della Terra.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "Nelle fasce polari le temperature sono alte tutto l’anno.",
+      "answer": false
+    },
+    {
+      "id": "vf3",
+      "statement": "Durante l’estate polare il Sole resta visibile per circa sei mesi.",
+      "answer": true
+    },
+    {
+      "id": "vf4",
+      "statement": "La taiga è una foresta di conifere.",
+      "answer": true
+    },
+    {
+      "id": "vf5",
+      "statement": "Nella tundra crescono alberi molto alti.",
+      "answer": false
+    },
+    {
+      "id": "vf6",
+      "statement": "Il terreno gelato della tundra si chiama permafrost.",
+      "answer": true
+    },
+    {
+      "id": "vf7",
+      "statement": "Al Polo Sud vivono pinguini e foche.",
+      "answer": true
+    },
+    {
+      "id": "vf8",
+      "statement": "Al Polo Nord vivono pinguini.",
+      "answer": false
+    },
+    {
+      "id": "vf9",
+      "statement": "Le fasce temperate hanno quattro stagioni.",
+      "answer": true
+    },
+    {
+      "id": "vf10",
+      "statement": "Nelle fasce temperate le temperature sono sempre molto alte.",
+      "answer": false
+    },
+    {
+      "id": "vf11",
+      "statement": "La macchia mediterranea è formata da alberi sempreverdi e arbusti.",
+      "answer": true
+    },
+    {
+      "id": "vf12",
+      "statement": "Le foreste di latifoglie perdono le foglie in autunno.",
+      "answer": true
+    },
+    {
+      "id": "vf13",
+      "statement": "Le fasce tropicali si trovano vicino all’equatore.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "Nella savana si alternano periodi di siccità e periodi di grandi piogge.",
+      "answer": true
+    },
+    {
+      "id": "vf15",
+      "statement": "La foresta pluviale è un ambiente con poche piante e pochi animali.",
+      "answer": false
+    },
+    {
+      "id": "vf16",
+      "statement": "Nei deserti caldi piove quasi mai.",
+      "answer": true
+    }
   ]
 }
