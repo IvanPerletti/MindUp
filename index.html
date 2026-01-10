@@ -10,13 +10,28 @@
   <link rel="stylesheet" href="main.css">
 </head>
 
+<script>
+  function goParents() {
+    window.location.href = "/pages/parents/parents.html";
+  }
+</script>
+
 <body>
   <div class="app">
 
-    <header class="exercise-header">
+  <header class="exercise-header header-home">
+    <div class="header-left">
       <div class="exercise-title">Scegli attività</div>
       <div class="exercise-progress">Animale → Materia → Argomento</div>
-    </header>
+    </div>
+
+    <div class="header-right">
+      <button class="parents-btn" onclick="goParents()">
+        Area genitori
+      </button>
+    </div>
+  </header>
+
 
     <main class="content">
       <section>

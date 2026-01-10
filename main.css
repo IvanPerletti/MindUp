@@ -10,3 +10,32 @@
   text-decoration: none;
   box-shadow: 0 6px 14px rgba(59,130,246,0.3);
 }
+/* ===== HOME HEADER LAYOUT ===== */
+
+.header-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ===== AREA GENITORI BUTTON ===== */
+
+.parents-btn {
+  background: #f2f4f8;
+  color: #333;
+  border: none;
+  border-radius: 14px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.parents-btn:active {
+  transform: scale(0.97);
+}
