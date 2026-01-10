@@ -1,58 +1,69 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindUp Kids</title>
 
-  <!-- GLOBAL BASE -->
+  <!-- GLOBAL -->
   <link rel="stylesheet" href="assets/css/base.css">
-  <!-- PAGE-SPECIFIC -->
+  <!-- PAGE -->
   <link rel="stylesheet" href="main.css">
 </head>
-
-<script>
-  function goParents() {
-    window.location.href = "/pages/parents/parents.html";
-  }
-</script>
 
 <body>
   <div class="app">
 
-  <header class="exercise-header header-home">
-    <div class="header-left">
-      <div class="exercise-title">Scegli attività</div>
-      <div class="exercise-progress">Animale → Materia → Argomento</div>
-    </div>
+    <!-- HEADER -->
+    <header class="exercise-header header-home">
+      <div class="header-left">
+        <div class="exercise-title">Scegli attività</div>
+        <div class="exercise-progress" id="meta-info">
+          Animale → Materia → Argomento
+        </div>
+      </div>
 
-    <div class="header-right">
-      <button class="parents-btn" onclick="goParents()">
-        Area genitori
-      </button>
-    </div>
-  </header>
+      <div class="header-right">
+        <button class="parents-btn"
+          onclick="location.href='/pages/parents/parents.html'">
+          Area genitori
+        </button>
+      </div>
+    </header>
 
-
+    <!-- MAIN -->
     <main class="content">
+
+      <!-- STEP 1 -->
       <section>
         <h3>Animali</h3>
         <div id="animals" class="grid"></div>
       </section>
 
+      <!-- STEP 2 -->
       <section id="subjects-section" class="hidden">
         <h3>Materia</h3>
         <div id="subjects" class="row"></div>
       </section>
 
+      <!-- STEP 3 -->
       <section id="topics-section" class="hidden">
         <h3>Argomenti</h3>
         <div id="topics" class="column"></div>
       </section>
+
+      <!-- STEP 4 -->
+      <section id="modes-section" class="hidden">
+        <h3>Attività disponibili</h3>
+        <div class="row">
+          <button id="btn-association" disabled>Associazione</button>
+          <button id="btn-truefalse" disabled>Vero / Falso</button>
+        </div>
+      </section>
+
     </main>
 
-    <!-- FOOTER FIXED -->
     <app-footer></app-footer>
-
   </div>
 
   <script type="module" src="main.js"></script>

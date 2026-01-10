@@ -1,6 +1,8 @@
-import { openDB, getDB } from "./core/db.js";
+import { openDB } from "./core/db.js";
 
-let contentIndex;
+let contentIndex = null;
+let topicData = null;
+
 const state = {
   animal: null,
   subject: null,
@@ -8,50 +10,22 @@ const state = {
 };
 
 // =========================
-// BOOTSTRAP (ONE ENTRY POINT)
+// BOOTSTRAP
 // =========================
 
 async function bootstrap() {
-  // 1) Init IndexedDB once
   await openDB();
 
-  // 2) KPI debug (safe after DB open)
-  await loadKpiSnapshot("local-1");
-
-  // 3) Load content index
   const r = await fetch("data/content-index.json");
   contentIndex = await r.json();
 
-  // 4) Render first view
   renderAnimals();
 }
 
 bootstrap();
 
 // =========================
-// KPI SNAPSHOT (DEBUG)
-// =========================
-
-async function loadKpiSnapshot(profileId) {
-  const db = getDB();
-
-  const sessions = await new Promise((resolve, reject) => {
-    const tx = db.transaction(["sessions"], "readonly");
-    const req = tx.objectStore("sessions").getAll();
-    req.onsuccess = () => resolve(req.result || []);
-    req.onerror = () => reject(req.error);
-  });
-
-  const mine = sessions.filter(s => s.profileId === profileId);
-
-  console.log("KPI DEBUG", {
-    totalSessions: mine.length,
-    lastSession: mine.sort((a, b) => b.startTime - a.startTime)[0] || null
-  });
-}
-
-// =========================
-// RENDER
+// RENDER FLOW
 // =========================
 
 function renderAnimals() {
@@ -65,6 +39,7 @@ function renderAnimals() {
       state.animal = id;
       state.subject = null;
       state.topic = null;
+      hideFrom("subjects-section");
       renderSubjects();
     };
     el.appendChild(btn);
@@ -73,8 +48,8 @@ function renderAnimals() {
 
 function renderSubjects() {
   const el = document.getElementById("subjects");
-  el.classList.remove("hidden");
   el.innerHTML = "";
+  show("subjects-section");
 
   for (const [id, s] of Object.entries(contentIndex.subjects)) {
     const btn = document.createElement("button");
@@ -82,6 +57,7 @@ function renderSubjects() {
     btn.onclick = () => {
       state.subject = id;
       state.topic = null;
+      hideFrom("topics-section");
       renderTopics();
     };
     el.appendChild(btn);
@@ -90,40 +66,79 @@ function renderSubjects() {
 
 function renderTopics() {
   const el = document.getElementById("topics");
-  el.classList.remove("hidden");
   el.innerHTML = "";
+  show("topics-section");
 
   for (const [id, t] of Object.entries(contentIndex.topics)) {
     if (t.animal === state.animal && t.subject === state.subject) {
       const btn = document.createElement("button");
       btn.textContent = t.label;
-      btn.onclick = () => {
+      btn.onclick = async () => {
         state.topic = id;
-        renderSessions();
+        await loadTopic(id);
+        renderCapabilities();
       };
       el.appendChild(btn);
     }
   }
 }
 
-function renderSessions() {
-  const sessions = contentIndex.topics[state.topic].sessions;
+// =========================
+// TOPIC HANDLING
+// =========================
 
-  setupSessionButton("association", sessions.association);
-  setupSessionButton("quiz", sessions.quiz);
-  setupSessionButton("completion", sessions.completion);
+async function loadTopic(topicId) {
+  const res = await fetch(`data/exercises/${topicId}.json`);
+  if (!res.ok) throw new Error("Topic JSON not found");
+  topicData = await res.json();
 }
 
-function setupSessionButton(type, enabled) {
-  const btn = document.getElementById(`btn-${type}`);
+function renderCapabilities() {
+  show("modes-section");
+
+  const meta = document.getElementById("meta-info");
+  meta.textContent =
+    `${topicData.subject} · difficoltà ${topicData.difficulty}`;
+
+  setupModeButton(
+    "association",
+    !!topicData.associations,
+    "associations"
+  );
+
+  setupModeButton(
+    "truefalse",
+    !!topicData.trueFalseQuestions,
+    "trueFalseQuestions"
+  );
+}
+
+function setupModeButton(id, enabled, page) {
+  const btn = document.getElementById(`btn-${id}`);
   btn.disabled = !enabled;
-  btn.onclick = enabled ? () => startSession(type) : null;
+
+  if (enabled) {
+    btn.onclick = () => {
+      location.href =
+        `/pages/${page}/${page}.html?topic=${state.topic}`;
+    };
+  } else {
+    btn.onclick = null;
+  }
 }
 
 // =========================
-// START SESSION
+// UI HELPERS
 // =========================
 
-function startSession(type) {
-  location.href = `/pages/${type}/index.html?topic=${state.topic}`;
+function show(id) {
+  document.getElementById(id).classList.remove("hidden");
+}
+
+function hideFrom(id) {
+  const sections = ["subjects-section", "topics-section", "modes-section"];
+  const start = sections.indexOf(id);
+  for (let i = start; i < sections.length; i++) {
+    document.getElementById(sections[i]).classList.add("hidden");
+  }
 }
