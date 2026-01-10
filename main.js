@@ -1,3 +1,5 @@
+import { openDB, getDB } from "./core/db.js";
+
 let contentIndex;
 const state = {
   animal: null,
@@ -5,18 +7,56 @@ const state = {
   topic: null
 };
 
-fetch("data/content-index.json")
-  .then(r => r.json())
-  .then(data => {
-    contentIndex = data;
-    renderAnimals();
+// =========================
+// BOOTSTRAP (ONE ENTRY POINT)
+// =========================
+
+async function bootstrap() {
+  // 1) Init IndexedDB once
+  await openDB();
+
+  // 2) KPI debug (safe after DB open)
+  await loadKpiSnapshot("local-1");
+
+  // 3) Load content index
+  const r = await fetch("data/content-index.json");
+  contentIndex = await r.json();
+
+  // 4) Render first view
+  renderAnimals();
+}
+
+bootstrap();
+
+// =========================
+// KPI SNAPSHOT (DEBUG)
+// =========================
+
+async function loadKpiSnapshot(profileId) {
+  const db = getDB();
+
+  const sessions = await new Promise((resolve, reject) => {
+    const tx = db.transaction(["sessions"], "readonly");
+    const req = tx.objectStore("sessions").getAll();
+    req.onsuccess = () => resolve(req.result || []);
+    req.onerror = () => reject(req.error);
   });
 
-/* ---------- RENDER ---------- */
+  const mine = sessions.filter(s => s.profileId === profileId);
+
+  console.log("KPI DEBUG", {
+    totalSessions: mine.length,
+    lastSession: mine.sort((a, b) => b.startTime - a.startTime)[0] || null
+  });
+}
+
+// =========================
+// RENDER
+// =========================
 
 function renderAnimals() {
   const el = document.getElementById("animals");
-  el.innerHTML = "<h3>Animale</h3>";
+  el.innerHTML = "";
 
   for (const [id, a] of Object.entries(contentIndex.animals)) {
     const btn = document.createElement("button");
@@ -34,7 +74,7 @@ function renderAnimals() {
 function renderSubjects() {
   const el = document.getElementById("subjects");
   el.classList.remove("hidden");
-  el.innerHTML = "<h3>Materia</h3>";
+  el.innerHTML = "";
 
   for (const [id, s] of Object.entries(contentIndex.subjects)) {
     const btn = document.createElement("button");
@@ -51,7 +91,7 @@ function renderSubjects() {
 function renderTopics() {
   const el = document.getElementById("topics");
   el.classList.remove("hidden");
-  el.innerHTML = "<h3>Argomento</h3>";
+  el.innerHTML = "";
 
   for (const [id, t] of Object.entries(contentIndex.topics)) {
     if (t.animal === state.animal && t.subject === state.subject) {
@@ -68,8 +108,6 @@ function renderTopics() {
 
 function renderSessions() {
   const sessions = contentIndex.topics[state.topic].sessions;
-  const box = document.getElementById("sessions");
-  box.classList.remove("hidden");
 
   setupSessionButton("association", sessions.association);
   setupSessionButton("quiz", sessions.quiz);
@@ -79,13 +117,13 @@ function renderSessions() {
 function setupSessionButton(type, enabled) {
   const btn = document.getElementById(`btn-${type}`);
   btn.disabled = !enabled;
-  btn.onclick = enabled
-    ? () => startSession(type)
-    : null;
+  btn.onclick = enabled ? () => startSession(type) : null;
 }
 
-/* ---------- START ---------- */
+// =========================
+// START SESSION
+// =========================
 
 function startSession(type) {
-  location.href = `../${type}/index.html?topic=${state.topic}`;
+  location.href = `/pages/${type}/index.html?topic=${state.topic}`;
 }

@@ -1,0 +1,70 @@
+{
+  "animals": {
+    "turtle": { "label": "Tartaruga" },
+    "fox": { "label": "Volpe" }
+  },
+
+  "subjects": {
+    "history": { "label": "Storia" },
+    "math": { "label": "Matematica" }
+  },
+
+  "topics": {
+    "sumerians": {
+      "label": "Sumeri",
+      "animal": "turtle",
+      "subject": "history",
+      "sessions": {
+        "association": true,
+        "quiz": false,
+        "completion": false
+      }
+    },
+    "babylonians": {
+      "label": "Babilonesi",
+      "animal": "fox",
+      "subject": "history",
+      "sessions": {
+        "association": true,
+        "quiz": true,
+        "completion": false
+      }
+    }
+  },
+
+  "animals": {
+    "owl": { "label": "Gufo" }
+  },
+
+  "subjects": {
+    "geography": { "label": "Geografia" },
+    "history": { "label": "Storia" }
+  },
+
+  "topics": {
+    "climate": {
+      "label": "Il clima",
+      "animal": "owl",
+      "subject": "geography",
+      "sessions": {
+        "quiz": true,
+        "association": false,
+        "completion": false
+      }
+    },
+
+    "sumerians": {
+      "label": "I Sumeri",
+      "animal": "owl",
+      "subject": "history",
+      "sessions": {
+        "quiz": false,
+        "association": true,
+        "completion": false
+      }
+    }
+  }
+}
+
+
+

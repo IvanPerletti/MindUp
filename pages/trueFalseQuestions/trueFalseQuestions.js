@@ -1,6 +1,9 @@
 /* =========================
    TRUE / FALSE – CORE LOGIC
    ========================= */
+import { openDB } from "../../core/db.js";
+import { SessionTracker } from "../../core/sessionTracker.js";
+
 
 const state = {
   sessionId: crypto.randomUUID(),
@@ -57,6 +60,13 @@ async function loadJSON(topic) {
     state.questions = json.trueFalseQuestions;
 
     shuffle(state.questions);
+    SessionTracker.startSession({
+      profileId: "local-1",
+      subject: state.subject,
+      cognitiveArea: "true_false",
+      difficulty: state.difficulty
+    });
+
     renderQuestion();
 
   } catch (err) {
@@ -89,6 +99,11 @@ function handleAnswer(value) {
   state.responseTimes.push(responseTime);
 
   let isCorrect = false;
+  SessionTracker.recordAnswer({
+    correct: isCorrect,
+    responseTimeMs: responseTime,
+    errorCategory: isCorrect ? null : (q.categoryId || "unspecified")
+  });
 
   if (value === "unknown") {
     state.unknown++;
@@ -97,8 +112,10 @@ function handleAnswer(value) {
     isCorrect = true;
   } else {
     state.wrong++;
-    state.errorsByCategory[q.categoryId] =
-      (state.errorsByCategory[q.categoryId] || 0) + 1;
+    const cat = q.categoryId || "unspecified";
+    state.errorsByCategory[cat] =
+      (state.errorsByCategory[cat] || 0) + 1;
+
   }
 
   showFeedback(value, isCorrect, q.explanation);
@@ -141,7 +158,7 @@ document
 
 /* ---------- End session + KPI ---------- */
 
-function endSession() {
+async function endSession() {
   state.endTime = Date.now();
 
   const total =
@@ -173,8 +190,8 @@ function endSession() {
     errorsByCategory: state.errorsByCategory
   };
 
-  console.log("VF SESSION KPI", session);
-  // TODO: save to IndexedDB + redirect result.html
+await SessionTracker.endSession();
+
 
 
 const correct = state.correct;
@@ -196,8 +213,13 @@ window.location.href =
 const params = new URLSearchParams(window.location.search);
 const topic = params.get("topic");
 
-if (topic) {
+(async () => {
+  if (!topic) {
+    console.error("Topic mancante");
+    return;
+  }
+
+  await openDB();
   loadJSON(topic);
-} else {
-  console.error("Topic mancante nell'URL");
-}
+})();
+
