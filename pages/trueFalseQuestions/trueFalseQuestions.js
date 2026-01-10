@@ -36,16 +36,32 @@ function shuffle(arr) {
 
 /* ---------- Init ---------- */
 
-async function initTrueFalse() {
-  const res = await fetch("trueFalseQuestions.json");
-  const json = await res.json();
+async function loadJSON(topic) {
+  try {
+    const path = `../../data/exercises/${topic}.json`;
+    const res = await fetch(path);
 
-  state.subject = json.subject || "";
-  state.difficulty = json.difficulty || "";
-  state.questions = json.trueFalseQuestions || [];
+    if (!res.ok) {
+      throw new Error("JSON non trovato: " + path);
+    }
 
-  shuffle(state.questions);
-  renderQuestion();
+    const json = await res.json();
+
+    // --- sicurezza minima ---
+    if (!Array.isArray(json.trueFalseQuestions)) {
+      throw new Error("trueFalseQuestions mancante o non valido");
+    }
+
+    state.subject = json.subject || topic;
+    state.difficulty = json.difficulty || "";
+    state.questions = json.trueFalseQuestions;
+
+    shuffle(state.questions);
+    renderQuestion();
+
+  } catch (err) {
+    console.error("Errore caricamento VF:", err);
+  }
 }
 
 /* ---------- Render ---------- */
@@ -159,7 +175,29 @@ function endSession() {
 
   console.log("VF SESSION KPI", session);
   // TODO: save to IndexedDB + redirect result.html
+
+
+const correct = state.correct;
+const wrong = state.wrong;
+const unknown = state.unknown;
+
+const params = new URLSearchParams({
+  correct,
+  wrong,
+  unknown,
+  total
+});
+
+window.location.href =
+  `/pages/result/result.html?${params.toString()}`;
 }
 
 /* ---------- Boot ---------- */
-initTrueFalse();
+const params = new URLSearchParams(window.location.search);
+const topic = params.get("topic");
+
+if (topic) {
+  loadJSON(topic);
+} else {
+  console.error("Topic mancante nell'URL");
+}
