@@ -189,7 +189,7 @@ const params = new URLSearchParams({
 });
 
 window.location.href =
-  `/pages/result/result.html?${params.toString()}`;
+  `/pages/results/result.html?${params.toString()}`;
 }
 
 /* ---------- Boot ---------- */
