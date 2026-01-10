@@ -283,7 +283,7 @@ window.addEventListener("resize", drawConnections);
 
 function goToResultPage() {
   const url =
-  '../../results/result.html?correct=' +
+  '/pages/results/result.html?correct=' +
   FLOW.correct +
   '&answered=' +
   FLOW.answered;
