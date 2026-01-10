@@ -2,7 +2,9 @@ function getParams() {
   const p = new URLSearchParams(window.location.search);
   return {
     correct: parseInt(p.get("correct") || "0", 10),
-    answered: parseInt(p.get("answered") || "0", 10)
+    wrong: parseInt(p.get("wrong") || "0", 10),
+    unknown: parseInt(p.get("unknown") || "0", 10),
+    total: parseInt(p.get("total") || "0", 10)
   };
 }
 
@@ -25,18 +27,25 @@ function goHome() {
 }
 
 (function initResult() {
-  const { correct, answered } = getParams();
-  const percent = answered === 0 ? 0 : Math.round((correct / answered) * 100);
+  const { correct, wrong, unknown, total } = getParams();
+
+  const percent =
+    total === 0 ? 0 : Math.round((correct / total) * 100);
 
   document.getElementById("correctCount").textContent = correct;
-  document.getElementById("answeredCount").textContent = answered;
+  document.getElementById("totalCount").textContent = total;
+  document.getElementById("wrongCount").textContent = wrong;
+  document.getElementById("unknownCount").textContent = unknown;
 
   const group = RESULT_MESSAGES.find(
     g => percent >= g.min && percent <= g.max
   ) || RESULT_MESSAGES[0];
 
-  document.getElementById("resultTitle").textContent = pickRandom(group.titles);
-  document.getElementById("resultSubtitle").textContent = pickRandom(group.subtitles);
+  document.getElementById("resultTitle").textContent =
+    pickRandom(group.titles);
+
+  document.getElementById("resultSubtitle").textContent =
+    pickRandom(group.subtitles);
 
   renderStars(group.stars);
 })();

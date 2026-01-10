@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Risultato</title>
-  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="result.css">
 </head>
 
@@ -16,9 +16,14 @@
       <p class="result-subtitle" id="resultSubtitle"></p>
 
       <div class="result-score">
-        <span id="correctCount">0</span> /
-        <span id="answeredCount">0</span>
+      <strong id="correctCount">0</strong> su
+      <strong id="totalCount">0</strong>
       </div>
+
+    <div class="result-breakdown">
+      <span>Sbagliate: <strong id="wrongCount">0</strong></span>
+      <span>Non risposte: <strong id="unknownCount">0</strong></span>
+    </div>
 
       <div class="stars" id="stars"></div>
     </section>
