@@ -89,13 +89,18 @@ body {
 
 button {
   flex: 1;
-  height: 52px;
+  min-height: 52px;          /* non height fissa */
+  padding: 10px 18px;        /* ← MARGINE REALE */
   border-radius: var(--btn-radius);
   border: none;
+
   font-size: 1.05rem;
   font-weight: 600;
+  line-height: 1.2;          /* evita compressione verticale */
+
   background: var(--primary);
   color: white;
+
   box-shadow: 0 6px 14px rgba(59,130,246,0.3);
 }
 
