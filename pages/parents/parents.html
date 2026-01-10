@@ -23,15 +23,27 @@
         <strong id="kpi-sessions">–</strong>
       </div>
 
-      <div class="kpi-card">
-        <span class="label">Accuratezza media</span>
-        <strong id="kpi-accuracy">–</strong>
-      </div>
+    <div class="kpi-card">
+      <span class="label">Accuratezza media</span>
+      <strong>
+        <span id="kpi-accuracy">–</span>
+        <span class="trend" id="trend-accuracy"></span>
+      </strong>
+    </div>
 
-      <div class="kpi-card">
-        <span class="label">Tempo medio risposta</span>
-        <strong id="kpi-response">–</strong>
-      </div>
+<div class="kpi-card">
+  <span class="label">Tempo medio risposta</span>
+  <strong>
+    <span id="kpi-response">–</span>
+    <span class="trend" id="trend-response"></span>
+  </strong>
+</div>
+
+    </section>
+    
+    <section class="kpi-chart">
+      <h2>Andamento recente</h2>
+      <div id="accuracy-bars" class="bar-chart"></div>
     </section>
 
     <section class="kpi-list">

@@ -99,11 +99,7 @@ function handleAnswer(value) {
   state.responseTimes.push(responseTime);
 
   let isCorrect = false;
-  SessionTracker.recordAnswer({
-    correct: isCorrect,
-    responseTimeMs: responseTime,
-    errorCategory: isCorrect ? null : (q.categoryId || "unspecified")
-  });
+
 
   if (value === "unknown") {
     state.unknown++;
@@ -117,7 +113,11 @@ function handleAnswer(value) {
       (state.errorsByCategory[cat] || 0) + 1;
 
   }
-
+  SessionTracker.recordAnswer({
+    correct: isCorrect,
+    responseTimeMs: responseTime,
+    errorCategory: isCorrect ? null : (q.categoryId || "unspecified")
+  });
   showFeedback(value, isCorrect, q.explanation);
 
   setTimeout(() => {
