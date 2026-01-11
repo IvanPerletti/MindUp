@@ -1,41 +1,131 @@
-.footer-link {
-  flex: 1;
-  text-align: center;
-  line-height: 52px;
-  height: 52px;
-  border-radius: var(--btn-radius);
-  background: var(--primary);
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 6px 14px rgba(59,130,246,0.3);
-}
-/* ===== HOME HEADER LAYOUT ===== */
+/* =========================
+   MAIN PAGE – TREE VIEW UI
+   ========================= */
 
-.header-home {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* ---------- LAYOUT BASE ---------- */
 
-.header-left {
+.content {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 28px;
 }
 
-/* ===== AREA GENITORI BUTTON ===== */
+/* ---------- SEZIONI (TREE NODES) ---------- */
+
+.content section {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* progressione visiva (indentazione) */
+#subjects-section {
+  margin-left: 16px;
+  border-left: 3px solid #e5e7eb;
+  padding-left: 16px;
+}
+
+#topics-section {
+  margin-left: 32px;
+  border-left: 3px solid #dbeafe;
+  padding-left: 16px;
+}
+
+#modes-section {
+  margin-left: 48px;
+  background: #f8fafc;
+}
+
+/* ---------- TITOLI ---------- */
+
+.content h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- CONTAINER BOTTONI ---------- */
+
+.grid,
+.row,
+.column {
+  display: flex;
+  gap: 14px;
+}
+
+.grid,
+.row {
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/* ---------- BOTTONI GENERICI ---------- */
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(59,130,246,0.25);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ---------- BOTTONI STEP FINALI ---------- */
+
+#modes-section button {
+  flex: 1;
+  padding: 18px;
+  font-size: 16px;
+}
+
+/* ---------- META INFO (breadcrumb) ---------- */
+
+.exercise-progress {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ---------- AREA GENITORI ---------- */
 
 .parents-btn {
   background: #f2f4f8;
   color: #333;
-  border: none;
   border-radius: 14px;
   padding: 8px 14px;
   font-size: 14px;
   font-weight: 500;
+  box-shadow: none;
 }
 
 .parents-btn:active {
   transform: scale(0.97);
+}
+
+/* ---------- UTILITIES ---------- */
+
+.hidden {
+  display: none;
 }

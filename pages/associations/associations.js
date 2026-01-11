@@ -41,7 +41,8 @@ const state = {
 
   answered: 0,
   correct: 0,
-
+  wrong: 0,
+  unknown: 0,
   responseTimes: [],
   errorsByCategory: {}
 };
@@ -159,7 +160,6 @@ function onSelect(el) {
 /* =========================
    VERIFY
 ========================= */
-
 function verify() {
   if (uiState.verified) return;
   uiState.verified = true;
@@ -168,48 +168,59 @@ function verify() {
   const responseTime = now - state.lastInteraction;
   state.responseTimes.push(responseTime);
 
-  let correctStep = 0;
-  let answeredStep = 0;
+  let stepCorrect = 0;
+  let stepWrong = 0;
+  let stepUnknown = 0;
 
   document
     .querySelectorAll('.item[data-side="right"]')
     .forEach(el => {
       const rightId = el.dataset.id;
-
-      const linkedLeft = Object.entries(uiState.links)
+      const linked = Object.entries(uiState.links)
         .find(([, r]) => r === rightId);
 
-      if (!linkedLeft) {
+      // ❓ NON RISPOSTA
+      if (!linked) {
+        stepUnknown++;
         el.classList.add("wrong");
+
+        SessionTracker.recordAnswer({
+          correct: false,
+          responseTimeMs: responseTime,
+          errorCategory: "associations"
+        });
         return;
       }
 
-      answeredStep++;
-
-      const [leftId] = linkedLeft;
+      const [leftId] = linked;
       const ok = leftId === rightId;
 
-      el.classList.add(ok ? "correct" : "wrong");
-
-      if (ok) correctStep++;
-      else {
+      if (ok) {
+        stepCorrect++;
+        el.classList.add("correct");
+      } else {
+        stepWrong++;
+        el.classList.add("wrong");
         state.errorsByCategory["associations"] =
           (state.errorsByCategory["associations"] || 0) + 1;
       }
+
+      SessionTracker.recordAnswer({
+        correct: ok,
+        responseTimeMs: responseTime,
+        errorCategory: ok ? null : "associations"
+      });
     });
 
-  state.correct += correctStep;
-  state.answered += answeredStep;
-
-  SessionTracker.recordAnswer({
-    correct: correctStep === answeredStep,
-    responseTimeMs: responseTime,
-    errorCategory: correctStep === answeredStep ? null : "associations"
-  });
+  state.correct += stepCorrect;
+  state.wrong += stepWrong;
+  state.unknown += stepUnknown;
+  state.answered += stepCorrect + stepWrong + stepUnknown;
 
   updateHeader();
   reloadBtn.disabled = false;
 }
+
 
 
 /* =========================
@@ -237,21 +248,26 @@ window.onresize = drawConnections;
 
 async function endSession() {
   const total = state.answered;
-  const avg =
-    state.responseTimes.reduce((a, b) => a + b, 0) /
-    state.responseTimes.length;
+
+  const avgResponseTime =
+    state.responseTimes.length
+      ? state.responseTimes.reduce((a, b) => a + b, 0) /
+        state.responseTimes.length
+      : 0;
 
   await SessionTracker.endSession();
 
-  const params = new URLSearchParams({
-    correct: state.correct,
-    answered: total,
-    avgResponseTime: Math.round(avg)
-  });
+const params = new URLSearchParams({
+  correct: state.correct,
+  wrong: state.wrong,
+  unknown: state.unknown,
+  total: state.answered
+});
 
   window.location.href =
     `/pages/results/result.html?${params.toString()}`;
 }
+
 
 /* =========================
    SVG
