@@ -63,18 +63,7 @@
   </main>
 
   <!-- Logica -->
-  <script src="associations.js"></script>
-
-  <!-- Loader dati (scegline uno) -->
-  <script src="data\exercises\associations\data_scienze.js"></script>
-  <!-- <script src="load_data_italiano.js"></script> -->
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const topic = params.get("topic");
-
-    loadJSON(topic);
-  </script>
+<script type="module" src="associations.js"></script>
 
 </body>
 </html>

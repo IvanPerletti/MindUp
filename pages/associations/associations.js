@@ -1,5 +1,12 @@
 /* =========================
-   RIFERIMENTI DOM
+   ASSOCIATIONS – CORE LOGIC
+========================= */
+
+import { openDB } from "../../core/db.js";
+import { SessionTracker } from "../../core/sessionTracker.js";
+
+/* =========================
+   DOM
 ========================= */
 
 const definitions = document.getElementById("definitions");
@@ -9,88 +16,100 @@ const verifyBtn = document.getElementById("verifyBtn");
 const reloadBtn = document.getElementById("reloadBtn");
 
 /* =========================
-   STATO GLOBALE
+   SESSION STATE
 ========================= */
-const FLOW = {
-  currentStep: 1,
-  totalSteps: 4,
+
+const state = {
+  sessionId: crypto.randomUUID(),
+  profileId: "local-1",
+
+  startTime: Date.now(),
+  lastInteraction: Date.now(),
+
+  subject: "",
+  difficulty: "",
+
+  steps: 4,
+  stepIndex: 0,
+
   answered: 0,
-  correct: 0
+  correct: 0,
+
+  responseTimes: [],
+  errorsByCategory: {}
 };
+
 let data = [];
 
-let state = {
-  links: {},        // leftId -> rightId
-  linkColors: {},   // leftId -> rgb()
+let uiState = {
+  links: {},
+  colors: {},
   activeLeft: null,
   verified: false
 };
 
 /* =========================
-   BUILD ESERCIZIO
+   INIT
 ========================= */
 
 async function loadJSON(topic) {
-  if (!topic) {
-    console.error("loadJSON: topic mancante");
-    return;
-  }
-
-  const path = `/data/exercises/${topic}.json`;
-
   try {
+    const path = `../../data/exercises/${topic}.json`;
     const res = await fetch(path);
-
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status} - ${path}`);
-    }
+    if (!res.ok) throw new Error("JSON non trovato");
 
     const json = await res.json();
+
+    if (!Array.isArray(json.associations)) {
+      throw new Error("associations mancanti");
+    }
+
+    state.subject = json.subject || topic;
+    state.difficulty = json.difficulty || "";
+
     data = json.associations;
+
+    await openDB();
+    SessionTracker.startSession({
+      profileId: state.profileId,
+      subject: state.subject,
+      cognitiveArea: "associations",
+      difficulty: state.difficulty
+    });
+
     buildExercise();
 
   } catch (e) {
-    console.error("JSON load failed:", e);
+    console.error("Errore associations:", e);
   }
 }
 
+/* =========================
+   BUILD
+========================= */
 
 function buildExercise() {
-  state = {
-    links: {},
-    linkColors: {},
-    activeLeft: null,
-    verified: false
-  };
-
+  uiState = { links: {}, colors: {}, activeLeft: null, verified: false };
   clearUI();
   clearConnections();
 
   const sample = shuffle([...data]).slice(0, 5);
 
-  const leftItems = sample.map(item => ({
-    id: item.id,
-    text: randomOne(item.definitions)
-  }));
-
-  const rightItems = shuffle(
-    sample.map(item => ({
-      id: item.id,
-      text: item.word
-    }))
+  renderList(definitions,
+    sample.map(i => ({ id: i.id, text: randomOne(i.definitions) })),
+    "left"
   );
 
-  renderList(definitions, leftItems, "left");
-  renderList(words, rightItems, "right");
-  
-  // reset stato UI
-document.querySelector(".app").classList.remove("verified");
-reloadBtn.disabled = true;
-reloadBtn.textContent = "Completa l’esercizio";
+  renderList(words,
+    shuffle(sample.map(i => ({ id: i.id, text: i.word }))),
+    "right"
+  );
+
+  reloadBtn.disabled = true;
 }
 
 /* =========================
-   RENDERING LISTE
+   RENDER
 ========================= */
 
 function renderList(container, items, side) {
@@ -100,193 +119,202 @@ function renderList(container, items, side) {
     el.textContent = item.text;
     el.dataset.id = item.id;
     el.dataset.side = side;
-    el.addEventListener("click", () => onSelect(el));
+    el.onclick = () => onSelect(el);
     container.appendChild(el);
   });
 }
 
 /* =========================
-   SELEZIONE / COLLEGAMENTO
+   INTERACTION
 ========================= */
 
 function onSelect(el) {
-  if (state.verified) return;
+  if (uiState.verified) return;
 
-  const side = el.dataset.side;
-  const id = el.dataset.id;
+  state.lastInteraction = Date.now();
 
-  // tap su definizione
-  if (side === "left") {
+  if (el.dataset.side === "left") {
     clearSelection("left");
+    uiState.activeLeft = el.dataset.id;
     el.classList.add("selected");
-    state.activeLeft = id;
     return;
   }
 
-  // tap su nome → crea collegamento
-  if (side === "right" && state.activeLeft) {
-    state.links[state.activeLeft] = id;
-
-    if (!state.linkColors[state.activeLeft]) {
-      state.linkColors[state.activeLeft] = randomVisibleColor();
-    }
-
-    state.activeLeft = null;
+  if (uiState.activeLeft) {
+    uiState.links[uiState.activeLeft] = el.dataset.id;
+    uiState.colors[uiState.activeLeft] ||= randomColor();
+    uiState.activeLeft = null;
     clearSelection("left");
     drawConnections();
   }
 }
 
 /* =========================
-   VERIFICA
+   VERIFY
 ========================= */
 
 function verify() {
-  if (state.verified) return;
+  if (uiState.verified) return;
+  uiState.verified = true;
 
-  state.verified = true;
-  document.querySelector(".app").classList.add("verified");
+  const now = Date.now();
+  const responseTime = now - state.lastInteraction;
+  state.responseTimes.push(responseTime);
 
-  let correctThisStep = 0;
-  const answeredThisStep = Object.keys(state.links).length;
+  let correctStep = 0;
+  let answeredStep = 0;
 
-  document.querySelectorAll('.item[data-side="right"]').forEach(el => {
-    const rightId = el.dataset.id;
-    const ok = Object.entries(state.links)
-      .some(([leftId, linkedRight]) =>
-        leftId === rightId && linkedRight === rightId
-      );
+  document
+    .querySelectorAll('.item[data-side="right"]')
+    .forEach(el => {
+      const rightId = el.dataset.id;
 
-    if (ok) correctThisStep++;
-    el.classList.add(ok ? "correct" : "wrong");
+      const linkedLeft = Object.entries(uiState.links)
+        .find(([, r]) => r === rightId);
+
+      if (!linkedLeft) {
+        el.classList.add("wrong");
+        return;
+      }
+
+      answeredStep++;
+
+      const [leftId] = linkedLeft;
+      const ok = leftId === rightId;
+
+      el.classList.add(ok ? "correct" : "wrong");
+
+      if (ok) correctStep++;
+      else {
+        state.errorsByCategory["associations"] =
+          (state.errorsByCategory["associations"] || 0) + 1;
+      }
+    });
+
+  state.correct += correctStep;
+  state.answered += answeredStep;
+
+  SessionTracker.recordAnswer({
+    correct: correctStep === answeredStep,
+    responseTimeMs: responseTime,
+    errorCategory: correctStep === answeredStep ? null : "associations"
   });
 
-  // aggiorna contatori globali
-  FLOW.answered += answeredThisStep;
-  FLOW.correct += correctThisStep;
-
-  // aggiorna header
-  document.getElementById("answered").textContent = FLOW.answered;
-  document.getElementById("correct").textContent = FLOW.correct;
-
-  // progress bar (+20% per step)
-  const percent = (FLOW.currentStep / FLOW.totalSteps) * 100;
-  document.getElementById("progressFill").style.width = percent + "%";
-
-  // abilita bottone prossimo
+  updateHeader();
   reloadBtn.disabled = false;
-  reloadBtn.textContent = "Vai al prossimo";
 }
 
 
 /* =========================
-   SVG CONNECTIONS
+   FLOW
+========================= */
+
+reloadBtn.onclick = () => {
+  state.stepIndex++;
+
+  if (state.stepIndex >= state.steps) {
+    endSession();
+    return;
+  }
+
+  document.getElementById("step").textContent = state.stepIndex + 1;
+  buildExercise();
+};
+
+verifyBtn.onclick = verify;
+window.onresize = drawConnections;
+
+/* =========================
+   END SESSION
+========================= */
+
+async function endSession() {
+  const total = state.answered;
+  const avg =
+    state.responseTimes.reduce((a, b) => a + b, 0) /
+    state.responseTimes.length;
+
+  await SessionTracker.endSession();
+
+  const params = new URLSearchParams({
+    correct: state.correct,
+    answered: total,
+    avgResponseTime: Math.round(avg)
+  });
+
+  window.location.href =
+    `/pages/results/result.html?${params.toString()}`;
+}
+
+/* =========================
+   SVG
 ========================= */
 
 function drawConnections() {
   connectionsLayer.innerHTML = "";
+  Object.entries(uiState.links).forEach(([l, r]) => {
+    const le = document.querySelector(`.item[data-id="${l}"][data-side="left"]`);
+    const re = document.querySelector(`.item[data-id="${r}"][data-side="right"]`);
+    if (!le || !re) return;
 
-  Object.entries(state.links).forEach(([leftId, rightId]) => {
-    const leftEl = document.querySelector(
-      `.item[data-side="left"][data-id="${leftId}"]`
-    );
-    const rightEl = document.querySelector(
-      `.item[data-side="right"][data-id="${rightId}"]`
-    );
-    if (!leftEl || !rightEl) return;
-
-    const p1 = getRightCenter(leftEl);
-    const p2 = getLeftCenter(rightEl);
+    const p1 = centerRight(le);
+    const p2 = centerLeft(re);
     const dx = (p2.x - p1.x) * 0.5;
 
-    const path = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "path"
-    );
-
-    path.setAttribute(
-      "d",
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d",
       `M ${p1.x} ${p1.y}
        C ${p1.x + dx} ${p1.y},
          ${p2.x - dx} ${p2.y},
          ${p2.x} ${p2.y}`
     );
-
+    path.setAttribute("stroke", uiState.colors[l]);
+    path.setAttribute("stroke-width", 4);
     path.setAttribute("fill", "none");
-    path.setAttribute("stroke", state.linkColors[leftId]);
-    path.setAttribute("stroke-width", "4");
-    path.setAttribute("stroke-linecap", "round");
-
     connectionsLayer.appendChild(path);
   });
 }
 
-function clearConnections() {
-  connectionsLayer.innerHTML = "";
-}
-
-function getRightCenter(el) {
-  const r = el.getBoundingClientRect();
-  const s = connectionsLayer.getBoundingClientRect();
-  return { x: r.right - s.left, y: r.top + r.height / 2 - s.top };
-}
-
-function getLeftCenter(el) {
-  const r = el.getBoundingClientRect();
-  const s = connectionsLayer.getBoundingClientRect();
-  return { x: r.left - s.left, y: r.top + r.height / 2 - s.top };
-}
-
 /* =========================
-   UTILITY
+   UTILS
 ========================= */
 
-function randomVisibleColor() {
-  const rnd = () => 64 + Math.floor(Math.random() * 129);
-  return `rgb(${rnd()}, ${rnd()}, ${rnd()})`;
-}
+const shuffle = a => a.sort(() => Math.random() - 0.5);
+const randomOne = a => a[Math.floor(Math.random() * a.length)];
+const randomColor = () => `rgb(${80+Math.random()*120},${80+Math.random()*120},${80+Math.random()*120})`;
 
 function clearUI() {
   definitions.innerHTML = "";
   words.innerHTML = "";
 }
-
-function clearSelection(side) {
-  document
-    .querySelectorAll(`.item[data-side="${side}"]`)
-    .forEach(el => el.classList.remove("selected"));
+function clearConnections() {
+  connectionsLayer.innerHTML = "";
 }
-
-const shuffle = arr => arr.sort(() => Math.random() - 0.5);
-const randomOne = arr => arr[Math.floor(Math.random() * arr.length)];
+function clearSelection(side) {
+  document.querySelectorAll(`.item[data-side="${side}"]`)
+    .forEach(e => e.classList.remove("selected"));
+}
+function centerRight(el) {
+  const r = el.getBoundingClientRect();
+  const s = connectionsLayer.getBoundingClientRect();
+  return { x: r.right - s.left, y: r.top + r.height / 2 - s.top };
+}
+function centerLeft(el) {
+  const r = el.getBoundingClientRect();
+  const s = connectionsLayer.getBoundingClientRect();
+  return { x: r.left - s.left, y: r.top + r.height / 2 - s.top };
+}
+function updateHeader() {
+  document.getElementById("answered").textContent = state.answered;
+  document.getElementById("correct").textContent = state.correct;
+  document.getElementById("progressFill").style.width =
+    ((state.stepIndex + 1) / state.steps * 100) + "%";
+}
 
 /* =========================
-   EVENTI GLOBALI
+   BOOT
 ========================= */
 
-verifyBtn.addEventListener("click", verify);
-reloadBtn.addEventListener("click", () => {
-  // se ho finito gli step → vai ai risultati
-  if (FLOW.currentStep >= FLOW.totalSteps) {
-    goToResultPage();
-    return;
-  }
-
-  // altrimenti vai allo step successivo
-  FLOW.currentStep++;
-  document.getElementById("step").textContent = FLOW.currentStep;
-  buildExercise();
-});
-
-
-window.addEventListener("resize", drawConnections);
-
-function goToResultPage() {
-  const url =
-  '/pages/results/result.html?correct=' +
-  FLOW.correct +
-  '&answered=' +
-  FLOW.answered;
-
-window.location.href = url;
-}
+const params = new URLSearchParams(location.search);
+const topic = params.get("topic");
+if (topic) loadJSON(topic);
