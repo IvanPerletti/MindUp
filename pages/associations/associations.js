@@ -2,8 +2,15 @@
    ASSOCIATIONS – CORE LOGIC
 ========================= */
 
-import { openDB } from "./core/db.js";
-import { SessionTracker } from "./core/sessionTracker.js";
+   function debug(msg) {
+  const el = document.getElementById("debug");
+  if (el) el.textContent += "\n" + msg;
+}
+debug("JS LOADED");
+
+import { openDB } from "/core/db.js";
+import { SessionTracker } from "/core/sessionTracker.js";
+
 
 /* =========================
    DOM
@@ -279,7 +286,7 @@ function drawConnections() {
    UTILS
 ========================= */
 
-const shuffle = a => a.sort(() => Math.random() - 0.5);
+const shuffle = a => [...a].sort(() => Math.random() - 0.5);
 const randomOne = a => a[Math.floor(Math.random() * a.length)];
 const randomColor = () => `rgb(${80+Math.random()*120},${80+Math.random()*120},${80+Math.random()*120})`;
 
@@ -315,6 +322,17 @@ function updateHeader() {
    BOOT
 ========================= */
 
-const params = new URLSearchParams(location.search);
-const topic = params.get("topic");
-if (topic) loadJSON(topic);
+(async function init() {
+  const params = new URLSearchParams(location.search);
+  const topic = params.get("topic");
+
+  if (!topic) {
+    document.body.innerHTML =
+      "<p style='padding:16px'>Errore: argomento mancante</p>";
+    return;
+  }
+
+  await openDB();
+  await loadJSON(topic);
+})();
+

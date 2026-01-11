@@ -7,8 +7,8 @@
 }
 debug("JS LOADED");
 
-import { openDB } from "../../core/db.js";
-import { SessionTracker } from "../../core/sessionTracker.js";
+import { openDB } from "/core/db.js";
+import { SessionTracker } from "/core/sessionTracker.js";
 
 
 const state = {
