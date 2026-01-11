@@ -1,0 +1,369 @@
+{
+  "subject": "storia",
+  "difficulty": "medio",
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Mesopotamia",
+      "definitions": [
+        "Regione tra due grandi fiumi del Medio Oriente",
+        "Zona chiamata 'terra tra i fiumi'"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a2",
+      "word": "Tigri ed Eufrate",
+      "definitions": [
+        "I due fiumi principali della Mesopotamia",
+        "Fiumi che rendevano fertile il territorio"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a3",
+      "word": "Piene dei fiumi",
+      "definitions": [
+        "Fuoriuscita dell’acqua dagli argini",
+        "Fenomeno che depositava fango fertile"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a4",
+      "word": "Fango fertile",
+      "definitions": [
+        "Strato ricco di nutrienti per l’agricoltura",
+        "Terreno adatto alla coltivazione"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a5",
+      "word": "Sumeri",
+      "definitions": [
+        "Primo popolo della Mesopotamia",
+        "Civiltà nata intorno al 4000 a.C."
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a6",
+      "word": "Pianura di Sumer",
+      "definitions": [
+        "Area dove si stabilirono i Sumeri",
+        "Zona inizialmente paludosa"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a7",
+      "word": "Scrittura",
+      "definitions": [
+        "Grande invenzione dei Sumeri",
+        "Sistema per registrare informazioni"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a8",
+      "word": "3500 a.C.",
+      "definitions": [
+        "Periodo di nascita della scrittura sumera",
+        "Data approssimativa delle prime tavolette"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a9",
+      "word": "Canali",
+      "definitions": [
+        "Opere per deviare l’acqua dei fiumi",
+        "Strutture per irrigare i campi"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a10",
+      "word": "Argini",
+      "definitions": [
+        "Costruzioni per contenere le piene",
+        "Barriere contro l’acqua dei fiumi"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a11",
+      "word": "Aratro",
+      "definitions": [
+        "Strumento per lavorare la terra",
+        "Attrezzo usato per la semina"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a12",
+      "word": "Agricoltura",
+      "definitions": [
+        "Attività principale dei Sumeri",
+        "Coltivazione di cereali e legumi"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a13",
+      "word": "Artigiani",
+      "definitions": [
+        "Produttori di oggetti e gioielli",
+        "Lavoratori dell’argilla e dei metalli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a14",
+      "word": "Bronzo",
+      "definitions": [
+        "Metallo ottenuto da rame e stagno",
+        "Usato per armi e strumenti"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a15",
+      "word": "Imbarcazioni a vela",
+      "definitions": [
+        "Mezzi per navigare sui fiumi",
+        "Barche usate per il commercio"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a17",
+      "word": "Sacerdoti",
+      "definitions": [
+        "Celebravano i riti religiosi",
+        "Classe dopo il re"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a18",
+      "word": "Scribi",
+      "definitions": [
+        "Persone che sapevano scrivere",
+        "Addetti alla registrazione dei conti"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a19",
+      "word": "Schiavi",
+      "definitions": [
+        "Prigionieri di guerra o debitori",
+        "Classe sociale più bassa"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a20",
+      "word": "Ur",
+      "definitions": [
+        "Città sumera molto importante",
+        "Centro con una grande ziqqurat"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a21",
+      "word": "Ziqqurat",
+      "definitions": [
+        "Grande torre a gradoni",
+        "Edificio religioso della città"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a22",
+      "word": "Tempio",
+      "definitions": [
+        "Luogo dei riti religiosi",
+        "Situato in cima alla ziqqurat"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a23",
+      "word": "Magazzini",
+      "definitions": [
+        "Luoghi di conservazione del cibo",
+        "Spazi ai piedi della ziqqurat"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a24",
+      "word": "Argilla",
+      "definitions": [
+        "Materiale per mattoni e tavolette",
+        "Elemento molto abbondante"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a25",
+      "word": "Tavolette di argilla",
+      "definitions": [
+        "Supporto per la scrittura",
+        "Incise quando erano ancora morbide"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a26",
+      "word": "Stilo",
+      "definitions": [
+        "Bastoncino per scrivere",
+        "Strumento con punta triangolare"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a27",
+      "word": "Scrittura cuneiforme",
+      "definitions": [
+        "Scrittura a forma di cunei",
+        "Sistema complesso di simboli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a28",
+      "word": "Ideogrammi",
+      "definitions": [
+        "Segni che rappresentano idee",
+        "Simboli della scrittura sumera"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a29",
+      "word": "600 segni",
+      "definitions": [
+        "Numero dei simboli della scrittura",
+        "Richiedevano anni di studio"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a30",
+      "word": "Registrazione delle merci",
+      "definitions": [
+        "Motivo della nascita della scrittura",
+        "Controllo di entrate e uscite"
+      ],
+      "categoryId": 1
+    }
+  ],
+    "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "La Mesopotamia significa 'terra tra i fiumi'.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "La Mesopotamia era una regione montuosa.",
+      "answer": false
+    },
+    {
+      "id": "vf3",
+      "statement": "I fiumi Tigri ed Eufrate rendevano fertile il territorio.",
+      "answer": true
+    },
+    {
+      "id": "vf4",
+      "statement": "Le piene dei fiumi avvenivano soprattutto in inverno.",
+      "answer": false
+    },
+    {
+      "id": "vf5",
+      "statement": "I Sumeri furono i primi abitanti della Mesopotamia.",
+      "answer": true
+    },
+    {
+      "id": "vf6",
+      "statement": "I Sumeri si stabilirono in Mesopotamia nel 1000 a.C.",
+      "answer": false
+    },
+    {
+      "id": "vf7",
+      "statement": "Una delle più grandi invenzioni dei Sumeri fu la scrittura.",
+      "answer": true
+    },
+    {
+      "id": "vf8",
+      "statement": "La scrittura sumera nacque per raccontare storie fantastiche.",
+      "answer": false
+    },
+    {
+      "id": "vf9",
+      "statement": "I Sumeri costruirono canali per controllare l’acqua dei fiumi.",
+      "answer": true
+    },
+    {
+      "id": "vf10",
+      "statement": "I Sumeri non praticavano l’agricoltura.",
+      "answer": false
+    },
+    {
+      "id": "vf11",
+      "statement": "Coltivavano cereali come orzo e grano.",
+      "answer": true
+    },
+    {
+      "id": "vf12",
+      "statement": "L’aratro era usato per la caccia.",
+      "answer": false
+    },
+    {
+      "id": "vf13",
+      "statement": "Gli artigiani sumeri lavoravano l’argilla e i metalli.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "Il bronzo si otteneva unendo rame e stagno.",
+      "answer": true
+    },
+    {
+      "id": "vf15",
+      "statement": "La società sumera era divisa in classi sociali.",
+      "answer": true
+    },
+    {
+      "id": "vf16",
+      "statement": "Gli scribi erano soldati dell’esercito.",
+      "answer": false
+    },
+    {
+      "id": "vf17",
+      "statement": "La città di Ur aveva una grande ziqqurat.",
+      "answer": true
+    },
+    {
+      "id": "vf18",
+      "statement": "La ziqqurat era costruita principalmente in marmo.",
+      "answer": false
+    },
+    {
+      "id": "vf19",
+      "statement": "La scrittura cuneiforme prende il nome dalla forma dei segni.",
+      "answer": true
+    },
+    {
+      "id": "vf20",
+      "statement": "Tutti i Sumeri sapevano leggere e scrivere.",
+      "answer": false
+    }
+  ]
+}
