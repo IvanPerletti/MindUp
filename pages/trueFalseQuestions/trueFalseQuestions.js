@@ -1,12 +1,18 @@
 /* =========================
    TRUE / FALSE – CORE LOGIC
    ========================= */
+   function debug(msg) {
+  const el = document.getElementById("debug");
+  if (el) el.textContent += "\n" + msg;
+}
+debug("JS LOADED");
+
 import { openDB } from "../../core/db.js";
 import { SessionTracker } from "../../core/sessionTracker.js";
 
 
 const state = {
-  sessionId: crypto.randomUUID(),
+  sessionId: "test-id",
   profileId: "local-1",
 
   startTime: Date.now(),
@@ -38,28 +44,33 @@ function shuffle(arr) {
 }
 
 /* ---------- Init ---------- */
-
 async function loadJSON(topic) {
   try {
-    const path = `../../data/exercises/${topic}.json`;
+    const path = `/data/exercises/${topic}.json`;
+    debug("FETCH → " + path);
+
     const res = await fetch(path);
+    debug("STATUS → " + res.status);
 
     if (!res.ok) {
-      throw new Error("JSON non trovato: " + path);
+      throw new Error("HTTP " + res.status);
     }
 
     const json = await res.json();
+    debug("JSON PARSED");
 
-    // --- sicurezza minima ---
     if (!Array.isArray(json.trueFalseQuestions)) {
-      throw new Error("trueFalseQuestions mancante o non valido");
+      throw new Error("trueFalseQuestions mancante");
     }
 
     state.subject = json.subject || topic;
     state.difficulty = json.difficulty || "";
     state.questions = json.trueFalseQuestions;
 
+    debug("QUESTIONS → " + state.questions.length);
+
     shuffle(state.questions);
+
     SessionTracker.startSession({
       profileId: "local-1",
       subject: state.subject,
@@ -67,12 +78,15 @@ async function loadJSON(topic) {
       difficulty: state.difficulty
     });
 
+    debug("SESSION STARTED");
     renderQuestion();
+    debug("FIRST QUESTION RENDERED");
 
   } catch (err) {
-    console.error("Errore caricamento VF:", err);
+    debug("❌ loadJSON ERROR → " + err.message);
   }
 }
+
 
 /* ---------- Render ---------- */
 
@@ -210,16 +224,30 @@ window.location.href =
 }
 
 /* ---------- Boot ---------- */
-const params = new URLSearchParams(window.location.search);
-const topic = params.get("topic");
+(async function init() {
+  debug("INIT START");
 
-(async () => {
+  const params = new URLSearchParams(window.location.search);
+  const topic = params.get("topic");
+
+  debug("TOPIC = " + topic);
+
   if (!topic) {
-    console.error("Topic mancante");
+    debug("❌ topic mancante");
     return;
   }
 
-  await openDB();
-  loadJSON(topic);
+  try {
+    debug("OPEN DB");
+    await openDB();
+    debug("DB OK");
+
+    await loadJSON(topic);
+    debug("LOAD JSON OK");
+  } catch (e) {
+    debug("❌ INIT ERROR: " + e.message);
+  }
 })();
+
+
 

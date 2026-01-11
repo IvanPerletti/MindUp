@@ -1,4 +1,4 @@
-import { openDB, getDB } from "../../core/db.js";
+import { openDB, getDB } from "./core/db.js";
 
 const PROFILE_ID = "local-1";
 const MAX_SESSIONS = 30;

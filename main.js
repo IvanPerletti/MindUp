@@ -88,7 +88,7 @@ function renderTopics() {
 // =========================
 
 async function loadTopic(topicId) {
-  const res = await fetch(`data/exercises/${topicId}.json`);
+  const res = await fetch(`/data/exercises/${topicId}.json`);
   if (!res.ok) throw new Error("Topic JSON not found");
   topicData = await res.json();
 }

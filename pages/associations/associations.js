@@ -2,8 +2,8 @@
    ASSOCIATIONS – CORE LOGIC
 ========================= */
 
-import { openDB } from "../../core/db.js";
-import { SessionTracker } from "../../core/sessionTracker.js";
+import { openDB } from "./core/db.js";
+import { SessionTracker } from "./core/sessionTracker.js";
 
 /* =========================
    DOM
@@ -20,7 +20,7 @@ const reloadBtn = document.getElementById("reloadBtn");
 ========================= */
 
 const state = {
-  sessionId: crypto.randomUUID(),
+  sessionId: "test-id",
   profileId: "local-1",
 
   startTime: Date.now(),
@@ -54,7 +54,7 @@ let uiState = {
 
 async function loadJSON(topic) {
   try {
-    const path = `../../data/exercises/${topic}.json`;
+    const path = `/data/exercises/${topic}.json`;
     const res = await fetch(path);
     if (!res.ok) throw new Error("JSON non trovato");
 
