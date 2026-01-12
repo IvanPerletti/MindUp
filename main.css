@@ -82,6 +82,7 @@ button {
   box-shadow: 0 4px 10px rgba(59,130,246,0.25);
 }
 
+
 button:active {
   transform: scale(0.97);
 }
@@ -128,4 +129,19 @@ button:disabled {
 
 .hidden {
   display: none;
+}
+/* =========================
+   STATO SELEZIONATO
+   ========================= */
+
+button.is-selected {
+  background: #1e40af;               /* blu più profondo */
+  box-shadow: 0 0 0 3px #bfdbfe;      /* outline chiaro */
+}
+
+/* per livelli non attivi ma già superati */
+button.is-dimmed {
+  background: #93c5fd;
+  box-shadow: none;
+  opacity: 0.85;
 }
