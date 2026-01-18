@@ -1,0 +1,219 @@
+{
+  "subject": "storia",
+  "title": "Segni e Racconti dei Sumeri",
+  "difficulty": "medio",
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Mesopotamia",
+      "definitions": [
+        "Regione tra il Tigri e l’Eufrate",
+        "Terra in cui vissero i Sumeri"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a2",
+      "word": "Scrittura",
+      "definitions": [
+        "Grande invenzione dei Sumeri",
+        "Sistema per registrare informazioni"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a3",
+      "word": "Pittogrammi",
+      "definitions": [
+        "Disegni che rappresentano oggetti",
+        "Prima forma di scrittura"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a4",
+      "word": "Ideogrammi",
+      "definitions": [
+        "Segni semplificati dei pittogrammi",
+        "Simboli che rappresentano idee"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a5",
+      "word": "Scrittura cuneiforme",
+      "definitions": [
+        "Scrittura a forma di cunei",
+        "Sistema creato con lo stilo"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a6",
+      "word": "Stilo",
+      "definitions": [
+        "Bastoncino con punta triangolare",
+        "Strumento per scrivere sull’argilla"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a7",
+      "word": "Tavolette di argilla",
+      "definitions": [
+        "Supporto per la scrittura",
+        "Incise quando erano morbide"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a8",
+      "word": "3500 a.C.",
+      "definitions": [
+        "Periodo di nascita della scrittura",
+        "Epoca dei primi testi sumeri"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a9",
+      "word": "Merci",
+      "definitions": [
+        "Beni da contare e registrare",
+        "Motivo della nascita della scrittura"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a10",
+      "word": "Edubba",
+      "definitions": [
+        "Scuola degli scribi",
+        "Luogo di studio della scrittura"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a11",
+      "word": "Scribi",
+      "definitions": [
+        "Persone che sapevano leggere e scrivere",
+        "Addetti ai conti e ai testi"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a12",
+      "word": "600 segni",
+      "definitions": [
+        "Numero dei simboli cuneiformi",
+        "Richiedevano anni di studio"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a13",
+      "word": "Stendardo di Ur",
+      "definitions": [
+        "Opera d’arte sumera decorata",
+        "Racconta guerra e pace"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a14",
+      "word": "Guerra",
+      "definitions": [
+        "Scena con carri e prigionieri",
+        "Una faccia dello Stendardo di Ur"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a15",
+      "word": "Pace",
+      "definitions": [
+        "Scena di festa e banchetto",
+        "Altra faccia dello Stendardo di Ur"
+      ],
+      "categoryId": 1
+    }
+  ],
+  "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "I Sumeri vivevano in Mesopotamia.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "I Sumeri scrivevano su fogli di carta.",
+      "answer": false
+    },
+    {
+      "id": "vf3",
+      "statement": "I pittogrammi erano disegni delle cose.",
+      "answer": true
+    },
+    {
+      "id": "vf4",
+      "statement": "Gli ideogrammi erano più complicati dei pittogrammi.",
+      "answer": false
+    },
+    {
+      "id": "vf5",
+      "statement": "La scrittura cuneiforme prende il nome dalla forma dei segni.",
+      "answer": true
+    },
+    {
+      "id": "vf6",
+      "statement": "Lo stilo aveva una punta rotonda.",
+      "answer": false
+    },
+    {
+      "id": "vf7",
+      "statement": "La scrittura nacque per contare le merci.",
+      "answer": true
+    },
+    {
+      "id": "vf8",
+      "statement": "Tutti i bambini sumeri andavano a scuola.",
+      "answer": false
+    },
+    {
+      "id": "vf9",
+      "statement": "Gli scribi avevano un ruolo molto importante.",
+      "answer": true
+    },
+    {
+      "id": "vf10",
+      "statement": "Lo Stendardo di Ur racconta solo scene di pace.",
+      "answer": false
+    },
+    {
+      "id": "vf11",
+      "statement": "Nel lato della guerra compaiono carri e prigionieri.",
+      "answer": true
+    },
+    {
+      "id": "vf12",
+      "statement": "Nel lato della pace il re festeggia con i funzionari.",
+      "answer": true
+    },
+    {
+      "id": "vf13",
+      "statement": "Il re nello Stendardo è rappresentato più grande degli altri.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "Le tavolette di argilla si rompevano facilmente dopo la cottura.",
+      "answer": false
+    },
+    {
+      "id": "vf15",
+      "statement": "I Sumeri scrivevano sempre da sinistra a destra.",
+      "answer": false
+    }
+  ]
+}
