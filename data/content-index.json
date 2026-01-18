@@ -8,7 +8,8 @@
   "subjects": {
     "history": { "label": "Storia" },
     "math": { "label": "Matematica" },
-    "geography": { "label": "Geografia" }
+    "geography": { "label": "Geografia" },
+	"science": { "label": "Scienze" }
   },
 
   "topics": {
@@ -43,7 +44,16 @@
         "completion": false
       }
     },
-
+    "vertebrates_animals": {
+      "label": "I vertebrati",
+      "animal": "owl",
+      "subject": "science",
+      "sessions": {
+        "association": true,
+        "quiz": false,
+        "completion": false
+      }
+    },
     "climate": {
       "label": "Il clima",
       "animal": "owl",

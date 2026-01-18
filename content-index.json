@@ -1,0 +1,34 @@
+{
+  "animals": {
+    "owl": { "label": "Gufo" }
+  },
+
+  "subjects": {
+    "geography": { "label": "Geografia" },
+    "history": { "label": "Storia" }
+  },
+
+  "topics": {
+    "climate": {
+      "label": "Il clima",
+      "animal": "owl",
+      "subject": "geography",
+      "sessions": {
+        "quiz": true,
+        "association": false,
+        "completion": false
+      }
+    },
+
+    "sumerians": {
+      "label": "I Sumeri",
+      "animal": "owl",
+      "subject": "history",
+      "sessions": {
+        "quiz": false,
+        "association": true,
+        "completion": false
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "subject": "scienze",
+  "title": "I Vertebrati",
+  "difficulty": "medio",
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Vertebrati",
+      "definitions": [
+        "Animali con scheletro interno",
+        "Animali con colonna vertebrale"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a2",
+      "word": "Colonna vertebrale",
+      "definitions": [
+        "Struttura che sostiene il corpo",
+        "Parte principale dello scheletro"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a3",
+      "word": "Pesci",
+      "definitions": [
+        "Vertebrati che vivono solo in acqua",
+        "Animali con pinne e branchie"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a4",
+      "word": "Branchie",
+      "definitions": [
+        "Organi per respirare nell’acqua",
+        "Estraggono ossigeno dall’acqua"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a5",
+      "word": "Vescica natatoria",
+      "definitions": [
+        "Bolla d’aria interna ai pesci",
+        "Serve per salire e scendere nell’acqua"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a6",
+      "word": "Rettli",
+      "definitions": [
+        "Vertebrati a sangue freddo",
+        "Animali con pelle a squame"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a7",
+      "word": "Eterotermi",
+      "definitions": [
+        "Animali che dipendono dal calore esterno",
+        "Si scaldano al sole"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a8",
+      "word": "Anfibi",
+      "definitions": [
+        "Animali con doppia vita",
+        "Vivono in acqua e sulla terra"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a9",
+      "word": "Metamorfosi",
+      "definitions": [
+        "Trasformazione del corpo",
+        "Passaggio da girino a rana"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a10",
+      "word": "Uccelli",
+      "definitions": [
+        "Vertebrati con piume",
+        "Animali con ali"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a11",
+      "word": "Omeotermi",
+      "definitions": [
+        "Animali a sangue caldo",
+        "Mantengono costante la temperatura"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a12",
+      "word": "Piume",
+      "definitions": [
+        "Ricoprono il corpo degli uccelli",
+        "Servono per volo e isolamento"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a13",
+      "word": "Mammiferi",
+      "definitions": [
+        "Animali che allattano i piccoli",
+        "Vertebrati con peli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a14",
+      "word": "Vivipari",
+      "definitions": [
+        "Animali che partoriscono i piccoli",
+        "Cuccioli nati già formati"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a15",
+      "word": "Ornitorinco",
+      "definitions": [
+        "Mammifero che depone uova",
+        "Animale con becco d’anatra"
+      ],
+      "categoryId": 1
+    }
+  ],
+  "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "I vertebrati hanno uno scheletro interno.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "Tutti i vertebrati vivono in acqua.",
+      "answer": false
+    },
+    {
+      "id": "vf3",
+      "statement": "I pesci respirano con le branchie.",
+      "answer": true
+    },
+    {
+      "id": "vf4",
+      "statement": "La vescica natatoria aiuta i pesci a volare.",
+      "answer": false
+    },
+    {
+      "id": "vf5",
+      "statement": "I rettili sono animali a sangue freddo.",
+      "answer": true
+    },
+    {
+      "id": "vf6",
+      "statement": "I rettili respirano con le branchie.",
+      "answer": false
+    },
+    {
+      "id": "vf7",
+      "statement": "Gli anfibi nascono in acqua.",
+      "answer": true
+    },
+    {
+      "id": "vf8",
+      "statement": "La metamorfosi è una trasformazione del corpo.",
+      "answer": true
+    },
+    {
+      "id": "vf9",
+      "statement": "Tutti gli uccelli sanno volare.",
+      "answer": false
+    },
+    {
+      "id": "vf10",
+      "statement": "Gli uccelli sono omeotermi.",
+      "answer": true
+    },
+    {
+      "id": "vf11",
+      "statement": "I mammiferi allattano i loro piccoli.",
+      "answer": true
+    },
+    {
+      "id": "vf12",
+      "statement": "Le balene non sono mammiferi.",
+      "answer": false
+    },
+    {
+      "id": "vf13",
+      "statement": "I mammiferi hanno peli.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "L’uomo è un vertebrato.",
+      "answer": true
+    },
+    {
+      "id": "vf15",
+      "statement": "L’ornitorinco è un mammifero speciale.",
+      "answer": true
+    }
+  ]
+}
