@@ -33,6 +33,16 @@
         "completion": false
       }
     },
+    "sumerians_writing_drawing": {
+      "label": "I Sumeri - scrittura pittura",
+      "animal": "owl",
+      "subject": "history",
+      "sessions": {
+        "association": true,
+        "quiz": false,
+        "completion": false
+      }
+    },
 
     "climate": {
       "label": "Il clima",

@@ -1,55 +1,46 @@
 {
   "subject": "storia",
-  "title": "Segni e Racconti dei Sumeri",
+  "title": "Segni e Scene dei Sumeri",
   "difficulty": "medio",
   "associations": [
     {
       "id": "a1",
-      "word": "Mesopotamia",
+      "word": "Pittogrammi",
       "definitions": [
-        "Regione tra il Tigri e l’Eufrate",
-        "Terra in cui vissero i Sumeri"
+        "Disegni che rappresentano oggetti reali",
+        "Prima forma di scrittura dei Sumeri"
       ],
       "categoryId": 1
     },
     {
       "id": "a2",
-      "word": "Scrittura",
+      "word": "Ideogrammi",
       "definitions": [
-        "Grande invenzione dei Sumeri",
-        "Sistema per registrare informazioni"
+        "Segni semplificati dei disegni",
+        "Rappresentano idee e non oggetti"
       ],
       "categoryId": 1
     },
     {
       "id": "a3",
-      "word": "Pittogrammi",
+      "word": "Scrittura cuneiforme",
       "definitions": [
-        "Disegni che rappresentano oggetti",
-        "Prima forma di scrittura"
+        "Scrittura fatta con segni a forma di cuneo",
+        "Ultima evoluzione della scrittura sumera"
       ],
       "categoryId": 1
     },
     {
       "id": "a4",
-      "word": "Ideogrammi",
+      "word": "3500 a.C.",
       "definitions": [
-        "Segni semplificati dei pittogrammi",
-        "Simboli che rappresentano idee"
+        "Periodo in cui nasce la scrittura",
+        "Epoca dei primi testi sumeri"
       ],
       "categoryId": 1
     },
     {
       "id": "a5",
-      "word": "Scrittura cuneiforme",
-      "definitions": [
-        "Scrittura a forma di cunei",
-        "Sistema creato con lo stilo"
-      ],
-      "categoryId": 1
-    },
-    {
-      "id": "a6",
       "word": "Stilo",
       "definitions": [
         "Bastoncino con punta triangolare",
@@ -58,83 +49,92 @@
       "categoryId": 1
     },
     {
-      "id": "a7",
+      "id": "a6",
       "word": "Tavolette di argilla",
       "definitions": [
-        "Supporto per la scrittura",
-        "Incise quando erano morbide"
+        "Supporto della scrittura sumera",
+        "Incise quando erano ancora morbide"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a7",
+      "word": "Scribi",
+      "definitions": [
+        "Persone che sapevano leggere e scrivere",
+        "Tenevano conti, leggi e testi religiosi"
       ],
       "categoryId": 1
     },
     {
       "id": "a8",
-      "word": "3500 a.C.",
+      "word": "Scuola (edubba)",
       "definitions": [
-        "Periodo di nascita della scrittura",
-        "Epoca dei primi testi sumeri"
+        "Scuola per imparare a scrivere",
+        "Frequentata solo da figli di famiglie ricche"
       ],
       "categoryId": 1
     },
     {
       "id": "a9",
-      "word": "Merci",
+      "word": "Stendardo di Ur",
       "definitions": [
-        "Beni da contare e registrare",
-        "Motivo della nascita della scrittura"
+        "Opera d’arte che racconta guerra e pace",
+        "Decorato con scene su due facce"
       ],
       "categoryId": 1
     },
     {
       "id": "a10",
-      "word": "Edubba",
+      "word": "Lettura dal basso verso l’alto",
       "definitions": [
-        "Scuola degli scribi",
-        "Luogo di studio della scrittura"
+        "Ordine di lettura delle scene",
+        "Ordine di lettura delle scene"
       ],
       "categoryId": 1
     },
     {
       "id": "a11",
-      "word": "Scribi",
+      "word": "Onagri",
       "definitions": [
-        "Persone che sapevano leggere e scrivere",
-        "Addetti ai conti e ai testi"
+        "Animali simili a cavalli",
+        "Trainavano i carri da guerra"
       ],
       "categoryId": 1
     },
     {
       "id": "a12",
-      "word": "600 segni",
+      "word": "Carri da guerra",
       "definitions": [
-        "Numero dei simboli cuneiformi",
-        "Richiedevano anni di studio"
+        "Usati nelle battaglie",
+        "Trainati da onagri"
       ],
       "categoryId": 1
     },
     {
       "id": "a13",
-      "word": "Stendardo di Ur",
+      "word": "Schiavi (guerra)",
       "definitions": [
-        "Opera d’arte sumera decorata",
-        "Racconta guerra e pace"
+        "Prigionieri catturati dal nemico",
+        "Condotti davanti al re"
       ],
       "categoryId": 1
     },
     {
       "id": "a14",
-      "word": "Guerra",
+      "word": "Schiavi (pace)",
       "definitions": [
-        "Scena con carri e prigionieri",
-        "Una faccia dello Stendardo di Ur"
+        "Trasportano cibo e bottino",
+        "Servono durante il banchetto"
       ],
       "categoryId": 1
     },
     {
       "id": "a15",
-      "word": "Pace",
+      "word": "Re",
       "definitions": [
-        "Scena di festa e banchetto",
-        "Altra faccia dello Stendardo di Ur"
+        "Personaggio più importante",
+        "Rappresentato più grande degli altri"
       ],
       "categoryId": 1
     }
@@ -142,78 +142,78 @@
   "trueFalseQuestions": [
     {
       "id": "vf1",
-      "statement": "I Sumeri vivevano in Mesopotamia.",
+      "statement": "I pittogrammi erano disegni che rappresentavano oggetti.",
       "answer": true
     },
     {
       "id": "vf2",
-      "statement": "I Sumeri scrivevano su fogli di carta.",
+      "statement": "Gli ideogrammi erano disegni molto dettagliati.",
       "answer": false
     },
     {
       "id": "vf3",
-      "statement": "I pittogrammi erano disegni delle cose.",
+      "statement": "La scrittura cuneiforme era fatta con segni a triangolo.",
       "answer": true
     },
     {
       "id": "vf4",
-      "statement": "Gli ideogrammi erano più complicati dei pittogrammi.",
-      "answer": false
+      "statement": "La scrittura fu inventata intorno al 3500 a.C.",
+      "answer": true
     },
     {
       "id": "vf5",
-      "statement": "La scrittura cuneiforme prende il nome dalla forma dei segni.",
-      "answer": true
-    },
-    {
-      "id": "vf6",
-      "statement": "Lo stilo aveva una punta rotonda.",
+      "statement": "I Sumeri scrivevano con penne e inchiostro.",
       "answer": false
     },
     {
-      "id": "vf7",
-      "statement": "La scrittura nacque per contare le merci.",
+      "id": "vf6",
+      "statement": "Lo stilo aveva la punta triangolare.",
       "answer": true
     },
     {
-      "id": "vf8",
+      "id": "vf7",
       "statement": "Tutti i bambini sumeri andavano a scuola.",
       "answer": false
     },
     {
+      "id": "vf8",
+      "statement": "Solo i figli delle famiglie ricche potevano diventare scribi.",
+      "answer": true
+    },
+    {
       "id": "vf9",
-      "statement": "Gli scribi avevano un ruolo molto importante.",
+      "statement": "Lo Stendardo di Ur racconta scene di guerra e di pace.",
       "answer": true
     },
     {
       "id": "vf10",
-      "statement": "Lo Stendardo di Ur racconta solo scene di pace.",
+      "statement": "Le scene dello Stendardo si leggono dall’alto verso il basso.",
       "answer": false
     },
     {
       "id": "vf11",
-      "statement": "Nel lato della guerra compaiono carri e prigionieri.",
+      "statement": "Nella scena di guerra compaiono carri trainati da onagri.",
       "answer": true
     },
     {
       "id": "vf12",
-      "statement": "Nel lato della pace il re festeggia con i funzionari.",
+      "statement": "Nella scena di pace gli schiavi trasportano cibo e bottino.",
       "answer": true
     },
     {
       "id": "vf13",
-      "statement": "Il re nello Stendardo è rappresentato più grande degli altri.",
-      "answer": true
+      "statement": "Il re nello Stendardo è grande come gli altri personaggi.",
+      "answer": false
     },
     {
       "id": "vf14",
-      "statement": "Le tavolette di argilla si rompevano facilmente dopo la cottura.",
-      "answer": false
+      "statement": "Gli schiavi nella scena di guerra sono prigionieri.",
+      "answer": true
     },
     {
       "id": "vf15",
-      "statement": "I Sumeri scrivevano sempre da sinistra a destra.",
-      "answer": false
+      "statement": "Lo Stendardo di Ur è un racconto fatto con immagini.",
+      "answer": true
     }
   ]
 }
