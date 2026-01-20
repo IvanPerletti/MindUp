@@ -1,0 +1,221 @@
+{
+  "subject": "matematica",
+  "title": "Moltiplicazione e Divisione – Fondamenti",
+  "difficulty": "medio",
+
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Moltiplicazione",
+      "definitions": [
+        "Addizione ripetuta",
+        "Operazione tra fattori"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a2",
+      "word": "Fattori",
+      "definitions": [
+        "Numeri che si moltiplicano",
+        "Moltiplicando e moltiplicatore"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a3",
+      "word": "Prodotto",
+      "definitions": [
+        "Risultato della moltiplicazione",
+        "Numero finale dell’operazione"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a4",
+      "word": "Elemento neutro",
+      "definitions": [
+        "Numero che non cambia il risultato",
+        "Numero 1 nella moltiplicazione"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a5",
+      "word": "Elemento assorbente",
+      "definitions": [
+        "Numero che annulla il prodotto",
+        "Numero 0 nella moltiplicazione"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a6",
+      "word": "Proprietà commutativa",
+      "definitions": [
+        "Scambiando l’ordine il risultato non cambia",
+        "3×4 = 4×3"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a7",
+      "word": "Proprietà associativa",
+      "definitions": [
+        "Raggruppare i fattori non cambia il risultato",
+        "(2×3)×5 = 2×(3×5)"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a8",
+      "word": "Proprietà dissociativa",
+      "definitions": [
+        "Scomporre un fattore",
+        "12 = 3×4"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a9",
+      "word": "Divisione",
+      "definitions": [
+        "Operazione inversa della moltiplicazione",
+        "Serve a distribuire"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a10",
+      "word": "Dividendo",
+      "definitions": [
+        "Numero da dividere",
+        "Totale da distribuire"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a11",
+      "word": "Divisore",
+      "definitions": [
+        "Numero per cui si divide",
+        "Indica in quante parti"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a12",
+      "word": "Quoziente",
+      "definitions": [
+        "Risultato della divisione",
+        "Numero ottenuto"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a13",
+      "word": "Divisione impossibile",
+      "definitions": [
+        "Divisione per zero",
+        "Numero diverso da zero diviso 0"
+      ],
+      "categoryId": 7
+    },
+    {
+      "id": "a14",
+      "word": "Divisione indeterminata",
+      "definitions": [
+        "0 diviso 0",
+        "Risultato non definito"
+      ],
+      "categoryId": 7
+    },
+    {
+      "id": "a15",
+      "word": "Proprietà invariantiva",
+      "definitions": [
+        "Moltiplicando o dividendo entrambi i termini",
+        "Il quoziente non cambia"
+      ],
+      "categoryId": 6
+    }
+  ],
+
+  "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "La moltiplicazione è un’addizione ripetuta.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "I numeri che si moltiplicano si chiamano fattori.",
+      "answer": true
+    },
+    {
+      "id": "vf3",
+      "statement": "Il prodotto è uno dei numeri che si moltiplicano.",
+      "answer": false
+    },
+    {
+      "id": "vf4",
+      "statement": "Moltiplicare per 1 cambia il risultato.",
+      "answer": false
+    },
+    {
+      "id": "vf5",
+      "statement": "Se uno dei fattori è 0, il prodotto è 0.",
+      "answer": true
+    },
+    {
+      "id": "vf6",
+      "statement": "Nella moltiplicazione l’ordine dei fattori conta.",
+      "answer": false
+    },
+    {
+      "id": "vf7",
+      "statement": "La proprietà associativa permette di cambiare i gruppi.",
+      "answer": true
+    },
+    {
+      "id": "vf8",
+      "statement": "La proprietà dissociativa spezza un numero in più fattori.",
+      "answer": true
+    },
+    {
+      "id": "vf9",
+      "statement": "La divisione è l’operazione inversa della moltiplicazione.",
+      "answer": true
+    },
+    {
+      "id": "vf10",
+      "statement": "Nel calcolo 0 : 5 il risultato è 0.",
+      "answer": true
+    },
+    {
+      "id": "vf11",
+      "statement": "È possibile dividere un numero per 0.",
+      "answer": false
+    },
+    {
+      "id": "vf12",
+      "statement": "0 : 0 è una divisione indeterminata.",
+      "answer": true
+    },
+    {
+      "id": "vf13",
+      "statement": "Il quoziente è il risultato della divisione.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "La proprietà invariantiva cambia il risultato della divisione.",
+      "answer": false
+    },
+    {
+      "id": "vf15",
+      "statement": "Una divisione tra numeri naturali è esatta solo se il dividendo è multiplo del divisore.",
+      "answer": true
+    }
+  ]
+}

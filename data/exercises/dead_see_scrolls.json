@@ -1,0 +1,221 @@
+{
+  "subject": "religione",
+  "title": "I Rotoli del Mar Morto",
+  "difficulty": "medio",
+
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Qumran",
+      "definitions": [
+        "Luogo vicino al Mar Morto",
+        "Zona dove furono trovati antichi rotoli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a2",
+      "word": "Mar Morto",
+      "definitions": [
+        "Mare molto salato",
+        "Area geografica vicino a Qumran"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a3",
+      "word": "Muhammad",
+      "definitions": [
+        "Giovane pastore che fece la scoperta",
+        "Ragazzo che lanciò un sasso nella grotta"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a4",
+      "word": "Grotte",
+      "definitions": [
+        "Luoghi dove erano nascosti i rotoli",
+        "Cavità nella roccia"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a5",
+      "word": "Giare",
+      "definitions": [
+        "Contenitori di terracotta",
+        "Oggetti usati per proteggere i rotoli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a6",
+      "word": "Pergamena",
+      "definitions": [
+        "Pelle di animale lavorata",
+        "Materiale su cui erano scritti i testi"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a7",
+      "word": "Ebraico",
+      "definitions": [
+        "Lingua antica dei rotoli",
+        "Lingua usata per scrivere testi sacri"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a8",
+      "word": "Rotoli del Mar Morto",
+      "definitions": [
+        "Antichi testi religiosi",
+        "Manoscritti ritrovati a Qumran"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a9",
+      "word": "Esseni",
+      "definitions": [
+        "Comunità religiosa antica",
+        "Gruppo che scrisse i rotoli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a10",
+      "word": "Bibbia",
+      "definitions": [
+        "Libro sacro",
+        "Testo religioso copiato nei rotoli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a11",
+      "word": "Vangelo di Marco",
+      "definitions": [
+        "Testo del Nuovo Testamento",
+        "Possibile frammento trovato nei rotoli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a12",
+      "word": "Romani",
+      "definitions": [
+        "Popolo che minacciò Qumran",
+        "Motivo per cui i rotoli furono nascosti"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a13",
+      "word": "Cuoio",
+      "definitions": [
+        "Materiale simile alla pergamena",
+        "Usato per scrivere alcuni rotoli"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a14",
+      "word": "Sette metri",
+      "definitions": [
+        "Lunghezza di alcuni rotoli",
+        "Misura dei manoscritti più grandi"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a15",
+      "word": "Scoperta",
+      "definitions": [
+        "Ritrovamento casuale",
+        "Evento importante per la storia religiosa"
+      ],
+      "categoryId": 8
+    }
+  ],
+
+  "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "I Rotoli del Mar Morto furono trovati vicino al Mar Morto.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "La scoperta avvenne nel 1947.",
+      "answer": true
+    },
+    {
+      "id": "vf3",
+      "statement": "Muhammad era uno studioso.",
+      "answer": false
+    },
+    {
+      "id": "vf4",
+      "statement": "I rotoli erano scritti in latino.",
+      "answer": false
+    },
+    {
+      "id": "vf5",
+      "statement": "I rotoli erano nascosti dentro giare.",
+      "answer": true
+    },
+    {
+      "id": "vf6",
+      "statement": "La pergamena è fatta di pelle animale.",
+      "answer": true
+    },
+    {
+      "id": "vf7",
+      "statement": "I Rotoli del Mar Morto contengono testi della Bibbia.",
+      "answer": true
+    },
+    {
+      "id": "vf8",
+      "statement": "Gli Esseni vivevano a Qumran.",
+      "answer": true
+    },
+    {
+      "id": "vf9",
+      "statement": "I Romani aiutarono a conservare i rotoli.",
+      "answer": false
+    },
+    {
+      "id": "vf10",
+      "statement": "Alcuni rotoli erano lunghi diversi metri.",
+      "answer": true
+    },
+    {
+      "id": "vf11",
+      "statement": "I rotoli rimasero nascosti per circa 2000 anni.",
+      "answer": true
+    },
+    {
+      "id": "vf12",
+      "statement": "La scoperta fu subito compresa come importantissima.",
+      "answer": false
+    },
+    {
+      "id": "vf13",
+      "statement": "I testi aiutano a capire la storia religiosa.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "I rotoli erano fatti di carta moderna.",
+      "answer": false
+    },
+    {
+      "id": "vf15",
+      "statement": "La scoperta dei rotoli è considerata una finestra sul passato.",
+      "answer": true
+    }
+  ]
+}

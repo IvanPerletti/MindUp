@@ -9,6 +9,7 @@
     "history": { "label": "Storia" },
     "math": { "label": "Matematica" },
     "geography": { "label": "Geografia" },
+	"religion": { "label": "Religione" },
 	"science": { "label": "Scienze" }
   },
 
@@ -63,6 +64,28 @@
         "association": false,
         "completion": false
       }
-    }
+    },
+      "multiplication_and_division_basics": {
+      "label": "Moltiplicazione e Divisione",
+      "animal": "owl",
+      "subject": "math",
+      "sessions": {
+        "quiz": true,
+        "association": true,
+        "completion": false
+      }
+     },
+	
+	
+	"dead_see_scrolls": {
+      "label": "I Rotoli del Mar Morto",
+      "animal": "owl",
+      "subject": "religion",
+      "sessions": {
+        "quiz": true,
+        "association": true,
+        "completion": false
+      }
+     }
   }
 }
