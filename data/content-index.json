@@ -65,6 +65,16 @@
         "completion": false
       }
     },
+	  "climate_of_italy": {
+      "label": "Il clima dell'Italia",
+      "animal": "owl",
+      "subject": "geography",
+      "sessions": {
+        "quiz": true,
+        "association": false,
+        "completion": false
+      }
+    },
       "multiplication_and_division_basics": {
       "label": "Moltiplicazione e Divisione",
       "animal": "owl",

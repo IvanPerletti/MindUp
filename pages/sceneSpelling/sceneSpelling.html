@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osserva e Scrivi</title>
+
+  <!-- Stile globale -->
+  <link rel="stylesheet" href="/assets/css/base.css">
+
+  <!-- Stile locale (stessa cartella) -->
+  <link rel="stylesheet" href="sceneSpelling.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <!-- HEADER -->
+    <header class="exercise-header">
+      <div class="header-card">
+        <h1 class="exercise-title" id="exerciseTitle">
+          Osserva l'immagine e scrivi il nome corretto
+        </h1>
+
+        <div class="exercise-progress">
+          Esercizio <span id="step">1</span> ·
+          Corrette: <span id="correct">0</span> /
+          Date: <span id="answered">0</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENUTO -->
+    <section class="scene-layout">
+
+      <!-- IMMAGINE -->
+      <section class="scene-visual">
+        <div class="scene-image-wrapper">
+          <img id="sceneImage" alt="Cartina o scena numerata">
+        </div>
+      </section>
+
+      <!-- LISTA RISPOSTE -->
+      <section class="scene-answers">
+        <div id="sceneList" class="scene-list"></div>
+      </section>
+
+    </section>
+
+    <!-- CONTROLLI -->
+    <footer class="controls">
+      <button id="nextBtn" type="button">Altre proposte</button>
+      <button id="verifyBtn" type="button">Verifica</button>
+    </footer>
+
+  </main>
+
+  <!-- Logica -->
+  <script type="module" src="sceneSpelling.js"></script>
+
+</body>
+</html>

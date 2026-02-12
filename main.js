@@ -129,6 +129,12 @@ function renderCapabilities() {
     !!topicData.trueFalseQuestions,
     "trueFalseQuestions"
   );
+
+    setupModeButton(
+    "sceneSpelling",
+    !!topicData.sceneSpelling,
+    "sceneSpelling"
+  );
 }
 
 function setupModeButton(id, enabled, page) {

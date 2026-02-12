@@ -1,0 +1,254 @@
+{
+  "subject": "geografia",
+  "title": "Il clima dell’Italia",
+  "difficulty": "medio",
+
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Clima",
+      "definitions": [
+        "Condizioni atmosferiche di un luogo",
+        "Insieme di temperature e precipitazioni"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a2",
+      "word": "Latitudine",
+      "definitions": [
+        "Distanza dall’Equatore",
+        "Influisce sulla temperatura"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a3",
+      "word": "Altitudine",
+      "definitions": [
+        "Altezza sul livello del mare",
+        "Più si sale, più fa freddo"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a4",
+      "word": "Vicinanza al mare",
+      "definitions": [
+        "Influenza le temperature",
+        "Rende il clima più mite"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a5",
+      "word": "Regione alpina",
+      "definitions": [
+        "Clima di montagna",
+        "Inverni lunghi e nevosi"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a6",
+      "word": "Regione padano-veneta",
+      "definitions": [
+        "Clima della Pianura Padana",
+        "Nebbie frequenti e umidità"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a7",
+      "word": "Regione appenninica",
+      "definitions": [
+        "Clima delle zone montuose interne",
+        "Inverni freddi ed estati fresche"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a8",
+      "word": "Regione ligure-tirrenica",
+      "definitions": [
+        "Clima mite tutto l’anno",
+        "Influenza del mare e dei monti"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a9",
+      "word": "Regione adriatica",
+      "definitions": [
+        "Clima influenzato da venti freddi",
+        "Inverni più freddi rispetto al Tirreno"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a10",
+      "word": "Regione mediterranea",
+      "definitions": [
+        "Clima caldo e secco",
+        "Tipico del sud e delle isole"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a11",
+      "word": "Pianura Padana",
+      "definitions": [
+        "Grande pianura del nord Italia",
+        "Zona con aria stagnante"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a12",
+      "word": "Escursione termica",
+      "definitions": [
+        "Differenza tra temperature",
+        "Più forte sulla costa adriatica"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a13",
+      "word": "Venti freddi",
+      "definitions": [
+        "Tramontana e bora",
+        "Abbassano la temperatura"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a14",
+      "word": "Venti caldi",
+      "definitions": [
+        "Scirocco",
+        "Portano caldo dall’Africa"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a15",
+      "word": "Zona temperata",
+      "definitions": [
+        "Fascia climatica della Terra",
+        "Zona dove si trova l’Italia"
+      ],
+      "categoryId": 1
+    }
+  ],
+
+  "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "Il clima italiano dipende anche dalla latitudine.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "Più si sale di altitudine, più la temperatura aumenta.",
+      "answer": false
+    },
+    {
+      "id": "vf3",
+      "statement": "La vicinanza al mare rende il clima più mite.",
+      "answer": true
+    },
+    {
+      "id": "vf4",
+      "statement": "L’Italia si trova nella zona tropicale.",
+      "answer": false
+    },
+    {
+      "id": "vf5",
+      "statement": "La regione alpina ha inverni lunghi e nevosi.",
+      "answer": true
+    },
+    {
+      "id": "vf6",
+      "statement": "Nella regione alpina le estati sono molto calde.",
+      "answer": false
+    },
+    {
+      "id": "vf7",
+      "statement": "La Pianura Padana è famosa per le nebbie.",
+      "answer": true
+    },
+    {
+      "id": "vf8",
+      "statement": "La regione padano-veneta è molto vicina al mare.",
+      "answer": false
+    },
+    {
+      "id": "vf9",
+      "statement": "La regione appenninica è influenzata dall’altitudine.",
+      "answer": true
+    },
+    {
+      "id": "vf10",
+      "statement": "La regione ligure-tirrenica ha temperature miti.",
+      "answer": true
+    },
+    {
+      "id": "vf11",
+      "statement": "La regione adriatica è protetta dai monti dai venti freddi.",
+      "answer": false
+    },
+    {
+      "id": "vf12",
+      "statement": "Nella regione adriatica le escursioni termiche sono più marcate.",
+      "answer": true
+    },
+    {
+      "id": "vf13",
+      "statement": "La regione mediterranea ha estati molto calde e secche.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "Lo scirocco è un vento freddo.",
+      "answer": false
+    },
+    {
+      "id": "vf15",
+      "statement": "Il sud e le isole italiane hanno un clima mediterraneo.",
+      "answer": true
+    }
+  ],
+    "sceneSpelling": [
+    {
+      "id": "ss1",
+      "title": "Regioni climatiche italiane",
+      "asset": "/assets/scenes/italia_climi_01.png",
+      "items": [
+        { "num": 1, "answer": "alpina", "categoryId": 1 },
+        { "num": 2, "answer": "padano veneta", "categoryId": 1 },
+        { "num": 3, "answer": "ligure tirrenica", "categoryId": 1 },
+        { "num": 4, "answer": "appenninica", "categoryId": 1 },
+        { "num": 5, "answer": "adriatica", "categoryId": 1 },
+        { "num": 6, "answer": "mediterranea", "categoryId": 1 }
+      ]
+    },
+    {
+      "id": "ss2",
+      "title": "Fiumi, montagne e mari",
+      "asset": "/assets/scenes/italia_climi_02.png",
+      "items": [
+        { "num": 1, "answer": "fiume Po", "categoryId": 1 },
+        { "num": 2, "answer": "Alpi", "categoryId": 1 },
+        { "num": 3, "answer": "Appennini", "categoryId": 1 },
+        { "num": 4, "answer": "Mar Adriatico", "categoryId": 1 },
+        { "num": 5, "answer": "Mar Tirreno", "categoryId": 1 },
+        { "num": 6, "answer": "Mar Ionio", "categoryId": 1 },
+        { "num": 7, "answer": "Mar Ligure", "categoryId": 1 },
+        { "num": 8, "answer": "lago di Garda", "categoryId": 1 },
+        { "num": 9, "answer": "lago Maggiore", "categoryId": 1 },
+        { "num": 10, "answer": "lago di Como", "categoryId": 1 },
+		{ "num": 11, "answer": "Mar Mediterraneo", "categoryId": 1 }
+      ]
+    }
+  ]
+}
