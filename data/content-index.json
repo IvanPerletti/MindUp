@@ -16,7 +16,7 @@
   "topics": {
     "babylonians": {
       "label": "Babilonesi",
-      "animal": "fox",
+      "animal": "owl",
       "subject": "history",
       "sessions": {
         "association": true,
@@ -96,6 +96,28 @@
         "association": true,
         "completion": false
       }
+     },
+
+	"animal_life_owl": {
+      "label": "vita degli animali",
+      "animal": "owl",
+      "subject": "science",
+      "sessions": {
+        "quiz": true,
+        "association": true,
+        "completion": false
+      }
+     },
+	 	"animal_life_fox": {
+      "label": "vita degli animali",
+      "animal": "fox",
+      "subject": "science",
+      "sessions": {
+        "quiz": true,
+        "association": true,
+        "completion": false
+      }
      }
+
   }
 }

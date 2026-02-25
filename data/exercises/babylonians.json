@@ -1,0 +1,219 @@
+{
+  "subject": "storia",
+  "topic": "babilonesi",
+  "difficulty": "medio",
+  "associations": [
+    {
+      "id": "a1",
+      "word": "Mesopotamia",
+      "definitions": [
+        "Terra tra i fiumi Tigri ed Eufrate",
+        "Regione dell’attuale Iraq"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a3",
+      "word": "Babilonia",
+      "definitions": [
+        "Capitale dei Babilonesi",
+        "Città ricca e famosa del mondo antico"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a4",
+      "word": "Hammurabi",
+      "definitions": [
+        "Re molto famoso",
+        "Fece scrivere le leggi"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a5",
+      "word": "Codice di Hammurabi",
+      "definitions": [
+        "Raccolta di leggi scritte",
+        "Inciso su una stele di pietra nera"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a6",
+      "word": "Awilum",
+      "definitions": [
+        "Uomini liberi con molti diritti",
+        "Comprendevano re, sacerdoti e scribi"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a7",
+      "word": "Muskenum",
+      "definitions": [
+        "Contadini, artigiani e soldati",
+        "Avevano meno diritti degli Awilum"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a8",
+      "word": "Wardum",
+      "definitions": [
+        "Schiavi senza libertà",
+        "Prigionieri di guerra o persone con debiti"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a9",
+      "word": "Marduk",
+      "definitions": [
+        "Dio più importante",
+        "Protettore di Babilonia"
+      ],
+      "categoryId": 4
+    },
+    {
+      "id": "a10",
+      "word": "Ishtar",
+      "definitions": [
+        "Dea dell’amore e della guerra",
+        "Aveva una porta dedicata"
+      ],
+      "categoryId": 4
+    },
+    {
+      "id": "a11",
+      "word": "Nabù",
+      "definitions": [
+        "Dio della saggezza",
+        "Figlio di Marduk"
+      ],
+      "categoryId": 4
+    },
+    {
+      "id": "a12",
+      "word": "Scrittura cuneiforme",
+      "definitions": [
+        "Segni a forma di cuneo",
+        "Incisa su tavolette di argilla"
+      ],
+      "categoryId": 5
+    },
+    {
+      "id": "a13",
+      "word": "Calendario",
+      "definitions": [
+        "Formato da 12 mesi",
+        "Ogni mese aveva 30 giorni"
+      ],
+      "categoryId": 5
+    },
+    {
+      "id": "a14",
+      "word": "Meridiana",
+      "definitions": [
+        "Misura il tempo con l’ombra del sole",
+        "Usata durante il giorno"
+      ],
+      "categoryId": 5
+    },
+    {
+      "id": "a15",
+      "word": "Clessidra",
+      "definitions": [
+        "Strumento per misurare il tempo",
+        "Serviva per misurare il tempo"
+      ],
+      "categoryId": 5
+    },
+    {
+      "id": "a16",
+      "word": "Porta di Ishtar",
+      "definitions": [
+        "Costruita intorno al 575 a.C.",
+        "Decorata con leoni, draghi e tori"
+      ],
+      "categoryId": 6
+    }
+  ],
+  "trueFalseQuestions": [
+    {
+      "id": "vf1",
+      "statement": "I Babilonesi vivevano in Mesopotamia.",
+      "answer": true
+    },
+    {
+      "id": "vf2",
+      "statement": "La Mesopotamia si trovava tra il Tigri e l’Eufrate.",
+      "answer": true
+    },
+    {
+      "id": "vf3",
+      "statement": "Babilonia era una città poco conosciuta.",
+      "answer": false
+    },
+    {
+      "id": "vf4",
+      "statement": "Il re era capo dell’esercito e proprietario delle terre.",
+      "answer": true
+    },
+    {
+      "id": "vf5",
+      "statement": "Gli Awilum erano schiavi.",
+      "answer": false
+    },
+    {
+      "id": "vf6",
+      "statement": "I Wardum erano considerati proprietà dei padroni.",
+      "answer": true
+    },
+    {
+      "id": "vf7",
+      "statement": "Le donne avevano gli stessi diritti degli uomini.",
+      "answer": false
+    },
+    {
+      "id": "vf8",
+      "statement": "I Babilonesi adoravano molti dei.",
+      "answer": true
+    },
+    {
+      "id": "vf9",
+      "statement": "Marduk era il dio più importante.",
+      "answer": true
+    },
+    {
+      "id": "vf10",
+      "statement": "Il Codice di Hammurabi era scritto su carta.",
+      "answer": false
+    },
+    {
+      "id": "vf11",
+      "statement": "Le punizioni erano uguali per tutte le classi sociali.",
+      "answer": false
+    },
+    {
+      "id": "vf12",
+      "statement": "I Babilonesi costruivano canali per irrigare i campi.",
+      "answer": true
+    },
+    {
+      "id": "vf13",
+      "statement": "Usavano pezzi di metallo prezioso negli scambi.",
+      "answer": true
+    },
+    {
+      "id": "vf14",
+      "statement": "La scrittura cuneiforme era incisa sull’argilla.",
+      "answer": true
+    },
+    {
+      "id": "vf15",
+      "statement": "I Giardini Pensili erano costruiti su terrazze sovrapposte.",
+      "answer": true
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "subject": "scienze",
+  "topic": "mondo-degli-animali",
+  "difficulty": "alto",
+  "type": "truefalse",
+  "trueFalseQuestions": [
+    { "id": "H01", "statement": "L’evoluzione è un cambiamento lentissimo che avviene in molto tempo.", "answer": true, "categoryId": 8 },
+    { "id": "H02", "statement": "La selezione naturale sceglie sempre l’animale più forte fisicamente, senza eccezioni.", "answer": false, "categoryId": 8 },
+    { "id": "H03", "statement": "Nell’esempio delle giraffe, quelle con collo un po’ più lungo riuscivano a raggiungere più foglie in alto.", "answer": true, "categoryId": 8 },
+    { "id": "H04", "statement": "Nell’esempio delle giraffe, avere più cibo poteva aiutare a crescere meglio e a fare più cuccioli.", "answer": true, "categoryId": 8 },
+    { "id": "H05", "statement": "Secondo l’esempio, col tempo le giraffe col collo corto sono aumentate più di quelle col collo lungo.", "answer": false, "categoryId": 8 },
+
+    { "id": "H06", "statement": "L’evoluzione può cambiare anche i comportamenti, non solo il corpo.", "answer": true, "categoryId": 8 },
+    { "id": "H07", "statement": "I predatori inventano strategie di caccia sempre peggiori per non stancarsi.", "answer": false, "categoryId": 8 },
+    { "id": "H08", "statement": "Le prede possono difendersi con la tanatosi, fingendo di essere morte per far perdere interesse al predatore.", "answer": true, "categoryId": 8 },
+    { "id": "H09", "statement": "Il camaleonte e la farfalla foglia sono esempi di mimetismo.", "answer": true, "categoryId": 8 },
+
+    { "id": "H10", "statement": "Gli animali comunicano solo con i suoni, perché non hanno altri modi.", "answer": false, "categoryId": 8 },
+    { "id": "H11", "statement": "Un ragno può farsi notare facendo vibrare un filo della tela.", "answer": true, "categoryId": 8 },
+    { "id": "H12", "statement": "Mostrare colori brillanti può significare sia “sono il più bello” sia “stai lontano, sono velenoso”.", "answer": true, "categoryId": 8 },
+    { "id": "H13", "statement": "Le sostanze chimiche usate per comunicare sono capite da qualunque specie animale, non solo dalla stessa specie.", "answer": false, "categoryId": 8 },
+
+    { "id": "H14", "statement": "Negli ovovivipari sembra che la mamma partorisca, ma il piccolo esce dall’uovo un attimo prima o subito dopo.", "answer": true, "categoryId": 8 },
+    { "id": "H15", "statement": "Negli ovipari l’embrione cresce sempre dentro il corpo della mamma fino alla nascita.", "answer": false, "categoryId": 8 },
+    { "id": "H16", "statement": "Nei vivipari, quando l’embrione è completamente formato, la mamma lo partorisce.", "answer": true, "categoryId": 8 },
+
+    { "id": "H17", "statement": "In passato cavalli e buoi aiutavano l’uomo a lavorare nei campi.", "answer": true, "categoryId": 8 },
+    { "id": "H18", "statement": "Asini e cammelli venivano usati per trasportare persone e cose.", "answer": true, "categoryId": 8 },
+    { "id": "H19", "statement": "I cani da soccorso possono cercare persone sotto la neve dopo una valanga o in mare se rischiano di annegare.", "answer": true, "categoryId": 8 },
+    { "id": "H20", "statement": "La Pet Therapy usa la compagnia di animali per aiutare persone tristi o insicure e può sostenere anche le cure mediche.", "answer": true, "categoryId": 8 }
+  ],
+"associations": [
+    {
+      "id": "a11",
+      "word": "Fecondazione",
+      "definitions": [
+        "Incontro tra spermatozoo e ovulo",
+        "Inizio dello sviluppo dell’embrione"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a12",
+      "word": "Selezione naturale",
+      "definitions": [
+        "Meccanismo che favorisce chi si adatta meglio",
+        "Porta al cambiamento delle specie nel tempo"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a13",
+      "word": "Evoluzione",
+      "definitions": [
+        "Cambiamento lentissimo nel tempo",
+        "Permette agli animali di adattarsi all’ambiente"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a14",
+      "word": "Predatori",
+      "definitions": [
+        "Animali che cacciano altri animali",
+        "Sviluppano strategie di caccia sempre migliori"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a15",
+      "word": "Prede",
+      "definitions": [
+        "Animali che vengono cacciati",
+        "Sviluppano strategie di difesa"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a16",
+      "word": "Colori brillanti",
+      "definitions": [
+        "Possono essere un segnale di pericolo",
+        "Possono servire per attirare un compagno"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a17",
+      "word": "Sostanze chimiche",
+      "definitions": [
+        "Messaggi rilasciati nell’aria o nell’acqua",
+        "Sono capite solo dagli animali della stessa specie"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a18",
+      "word": "Cani da soccorso",
+      "definitions": [
+        "Cercano persone sotto la neve dopo una valanga",
+        "Aiutano a trovare chi rischia di annegare"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a19",
+      "word": "Pet Therapy",
+      "definitions": [
+        "Terapia con animali per far stare meglio le persone",
+        "Può aiutare a ridurre tristezza o dolore"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a20",
+      "word": "Collo lungo delle giraffe",
+      "definitions": [
+        "Esempio di adattamento",
+        "Permette di raggiungere foglie più in alto"
+      ],
+      "categoryId": 8
+    }
+  ]
+}

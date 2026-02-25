@@ -1,0 +1,125 @@
+{
+  "subject": "scienze",
+  "topic": "mondo-degli-animali",
+  "difficulty": "medio",
+  "type": "truefalse",
+  "trueFalseQuestions": [
+    { "id": "M01", "statement": "Per non scomparire, una specie deve riprodursi facendo cuccioli.", "answer": true, "categoryId": 8 },
+    { "id": "M02", "statement": "La cellula maschile si chiama spermatozoo.", "answer": true, "categoryId": 8 },
+    { "id": "M03", "statement": "La cellula femminile si chiama ovulo.", "answer": true, "categoryId": 8 },
+    { "id": "M04", "statement": "La fecondazione avviene quando spermatozoo e ovulo si incontrano.", "answer": true, "categoryId": 8 },
+    { "id": "M05", "statement": "L’embrione è già un cucciolo adulto e pronto a vivere da solo.", "answer": false, "categoryId": 8 },
+
+    { "id": "M06", "statement": "Negli ovipari l’embrione cresce fuori dal corpo della mamma, dentro un uovo.", "answer": true, "categoryId": 8 },
+    { "id": "M07", "statement": "Gli uccelli sono ovipari e spesso covano le uova per tenerle al caldo.", "answer": true, "categoryId": 8 },
+    { "id": "M08", "statement": "Pesci, rettili, anfibi e insetti possono essere ovipari.", "answer": true, "categoryId": 8 },
+    { "id": "M09", "statement": "Gli insetti, di solito, proteggono le uova e non le abbandonano mai.", "answer": false, "categoryId": 8 },
+
+    { "id": "M10", "statement": "Nei vivipari l’embrione cresce dentro il corpo della mamma in un posto protetto.", "answer": true, "categoryId": 8 },
+    { "id": "M11", "statement": "Quasi tutti i mammiferi (come cani, gatti e balene) sono vivipari.", "answer": true, "categoryId": 8 },
+    { "id": "M12", "statement": "I cuccioli dei mammiferi, appena nati, bevono il latte della mamma.", "answer": true, "categoryId": 8 },
+
+    { "id": "M13", "statement": "Negli ovovivipari l’embrione cresce in un uovo che resta nel corpo della mamma fino alla schiusa.", "answer": true, "categoryId": 8 },
+    { "id": "M14", "statement": "Alcuni squali e rettili come vipera e lucertola possono essere ovovivipari.", "answer": true, "categoryId": 8 },
+
+    { "id": "M15", "statement": "Gli animali comunicano per avvisare di un pericolo o per trovare un compagno.", "answer": true, "categoryId": 8 },
+    { "id": "M16", "statement": "Le api possono comunicare con una danza per indicare dove trovare il polline.", "answer": true, "categoryId": 8 },
+    { "id": "M17", "statement": "Le lucciole usano segnali luminosi nella notte.", "answer": true, "categoryId": 8 },
+    { "id": "M18", "statement": "Gli animali comunicano anche con odori o sostanze chimiche nell’aria o nell’acqua.", "answer": true, "categoryId": 8 },
+
+    { "id": "M19", "statement": "La selezione naturale è un meccanismo che porta gli animali ad adattarsi nel tempo.", "answer": true, "categoryId": 8 },
+    { "id": "M20", "statement": "Il mimetismo serve a farsi notare meglio dai predatori.", "answer": false, "categoryId": 8 }
+  ],
+    "associations": [
+    {
+      "id": "a1",
+      "word": "Spermatozoo",
+      "definitions": [
+        "Cellula maschile della riproduzione",
+        "Si unisce all’ovulo nella fecondazione"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "a2",
+      "word": "Ovulo",
+      "definitions": [
+        "Cellula femminile della riproduzione",
+        "Incontra lo spermatozoo per formare l’embrione"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "a3",
+      "word": "Embrione",
+      "definitions": [
+        "Cucciolo in miniatura che deve crescere",
+        "Si forma dopo la fecondazione"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "a4",
+      "word": "Ovipari",
+      "definitions": [
+        "Animali che depongono uova",
+        "Embrione cresce fuori dal corpo della mamma"
+      ],
+      "categoryId": 4
+    },
+    {
+      "id": "a5",
+      "word": "Vivipari",
+      "definitions": [
+        "Embrione cresce nella pancia della mamma",
+        "La mamma partorisce il piccolo formato"
+      ],
+      "categoryId": 5
+    },
+    {
+      "id": "a6",
+      "word": "Ovovivipari",
+      "definitions": [
+        "Uovo resta nel corpo della mamma fino alla schiusa",
+        "Il piccolo esce dall’uovo poco prima o dopo la nascita"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "a7",
+      "word": "Danza delle api",
+      "definitions": [
+        "Movimento usato per comunicare",
+        "Indica dove trovare il polline"
+      ],
+      "categoryId": 7
+    },
+    {
+      "id": "a8",
+      "word": "Mimetismo",
+      "definitions": [
+        "Strategia per sembrare l’ambiente",
+        "Aiuta a non farsi vedere dai predatori"
+      ],
+      "categoryId": 8
+    },
+    {
+      "id": "a9",
+      "word": "Tanatosi",
+      "definitions": [
+        "Fingere di essere morti",
+        "Serve a far perdere interesse al predatore"
+      ],
+      "categoryId": 9
+    },
+    {
+      "id": "a10",
+      "word": "Cani guida",
+      "definitions": [
+        "Aiutano persone non vedenti",
+        "Permettono di muoversi in sicurezza in città"
+      ],
+      "categoryId": 10
+    }
+  ]
+}
